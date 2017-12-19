@@ -1,5 +1,9 @@
+.App {
+  background-color: #f7e8d9;
+}
+
 nav {
-  background-color: black;
+  background-color: #3a606e;
   height: 5em;
 }
 
@@ -12,16 +16,12 @@ nav ul li{
 	display: inline;
 }
 
-#left-nav {
-
-}
-
 #right-nav {
   float: right;
 }
 
 #left-nav a {
-  font-size: 3.5em;
+  font-size: 3em;
   padding: .5em;
 }
 
@@ -29,9 +29,17 @@ nav ul li a {
 	text-decoration: none;
 	padding: 1em;
 	color: #fff;
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 
 nav ul li a:hover {
 	color: blue;
+}
+
+.content-panel {
+  width: 1200px;
+  height: 700px;
+  margin-left: 100px;
+  border: solid black 1px;
+  background-color: #fafafa;
 }
