@@ -5,14 +5,16 @@ import './App.css'
 class NavBar extends Component {
   render() {
     return (
-      <div id="navbar">
-        <ul>
-	        <li><a href="http://github.com">Logo</a></li>
-	        <li><a href="http://github.com">SitterSwap</a></li>
-	        <li><a href="http://github.com">Login</a></li>
-	        <li><a href="http://github.com">Create Account</a></li>
+      <nav>
+        <ul id="left-nav">
+  	      <li><a href="">Logo</a></li>
+  	      <li><a href="/">Sitter Swap</a></li>
         </ul>
-      </div>
+        <ul id="right-nav">
+  	      <li><a href="">Login</a></li>
+  	      <li><a href="">Create Account</a></li>
+        </ul>
+      </nav>
     )
   }
 }
