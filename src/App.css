@@ -5,6 +5,8 @@
 nav {
   background-color: #3a606e;
   height: 5em;
+  width: 1200px;
+  margin-left: 100px;
 }
 
 nav ul {
