@@ -30,10 +30,11 @@ nav ul li a {
 	padding: 1em;
 	color: #fff;
   font-size: 1.25em;
+  text-shadow: 3px 3px 8px #c2948a;
 }
 
 nav ul li a:hover {
-	color: blue;
+	color: #c2948a;
 }
 
 .content-panel {
@@ -69,6 +70,8 @@ nav ul li a:hover {
 #get-started {
   margin-left: 90px;
   margin-top: 50px;
+  color: #c2948a;
+  text-shadow: 2px 2px 5px black;
 }
 
 .info-panel {
@@ -82,6 +85,33 @@ nav ul li a:hover {
   height: 200px;
   border: black solid 1px;
   display: inline-block;
-  text-align: center;
   margin: 25px;
+  vertical-align: top;
+  background-color: #7ea8be;
+}
+
+.number {
+  font-size: 60px;
+  float: left;
+  width: 30px;
+  margin-top: 0px;
+  margin-left: 15px;
+}
+
+#box-text {
+  height: 75px;
+  width: 200px;
+  margin-left: 80px;
+  padding-top: 10px;
+  text-align: left;
+}
+
+.info-box button {
+  margin-left: -35px;
+  background-color: #c2948a;
+}
+
+.rose {
+  color: #c2948a;
+  text-shadow: 2px 2px 5px black;
 }

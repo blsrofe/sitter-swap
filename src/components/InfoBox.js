@@ -4,7 +4,10 @@ class InfoBox extends Component {
   render() {
     return(
       <article className="info-box">
-        <p>Box</p>
+        <h4>{this.props.title}</h4>
+        <p className="number">{this.props.number}</p>
+        <p id="box-text">{this.props.text}</p>
+        <button>More Info</button>
       </article>
     )
   }
