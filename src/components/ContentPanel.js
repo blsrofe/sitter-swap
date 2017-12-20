@@ -5,6 +5,7 @@ import {
   HashRouter
 } from "react-router-dom"
 import Home from './Home'
+import NewMemberForm from './NewMemberForm'
 
 class ContentPanel extends Component {
   render() {
@@ -12,6 +13,7 @@ class ContentPanel extends Component {
       <HashRouter>
         <div className="content">
           <Route exact path="/" component={Home}/>
+          <Route path="/new" component={NewMemberForm}/>
         </div>
       </HashRouter>
     )
