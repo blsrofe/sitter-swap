@@ -2,15 +2,7 @@ import React, { Component } from 'react'
 import logo from './logo.svg'
 import './App.css'
 import NavBar from './components/NavBar'
-
-class ContentPanel extends Component {
-  render() {
-    return(
-      <section className="content-panel">
-      </section>
-    )
-  }
-}
+import ContentPanel from './components/ContentPanel'
 
 class App extends Component {
   render() {
