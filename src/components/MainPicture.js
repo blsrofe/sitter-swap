@@ -4,7 +4,7 @@ class MainPicture extends Component {
   render() {
     return(
       <article className="main-picture">
-        <p>Dog picture goes here</p>
+        <img src={require('../images/d_and_k.jpg')} id="main-pic" />
       </article>
     )
   }
