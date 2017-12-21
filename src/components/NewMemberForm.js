@@ -114,7 +114,7 @@ class NewMemberForm extends Component {
           <label htmlFor="email">Email: </label>
             <input name="email" type="email" onChange={this.handleChange} required/>
           <label htmlFor="phoneNumber">Phone: </label>
-            <input name="phoneNumber" type="tel" onChange={this.handleChange} required/>
+            <input name="phoneNumber" type="text" onChange={this.handleChange} required/>
           <br></br>
           <label htmlFor="password">Password: </label>
             <input name="password" type="password" onChange={this.handleChange} required/>
