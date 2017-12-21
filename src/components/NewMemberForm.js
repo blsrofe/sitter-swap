@@ -137,7 +137,7 @@ class NewMemberForm extends Component {
             <option value="townhome">Townhome</option>
             <option value="other">Other</option>
           </select>
-          <label htmlFor="fencedYard">Fenced Yard? </label>
+          <label htmlFor="fencedYard">    Fenced Yard? </label>
             <input type="radio" name="fencedYard" value="true" onChange={this.handleChange} />Yes
             <input type="radio" name="fencedYard" value="false" onChange={this.handleChange}/>No
           <br></br>
