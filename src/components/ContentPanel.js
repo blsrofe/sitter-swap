@@ -5,15 +5,15 @@ import {
   HashRouter
 } from "react-router-dom"
 import Home from './Home'
-import NewMemberForm from './NewMemberForm'
+import NewMemberBox from './NewMemberBox'
 
 class ContentPanel extends Component {
   render() {
     return(
       <HashRouter>
-        <div className="content">
+        <div className="content-panel">
           <Route exact path="/" component={Home}/>
-          <Route path="/new" component={NewMemberForm}/>
+          <Route path="/new" component={NewMemberBox}/>
         </div>
       </HashRouter>
     )

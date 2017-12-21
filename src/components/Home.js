@@ -6,7 +6,7 @@ import InfoPanel from './InfoPanel'
 class Home extends Component {
   render() {
     return(
-      <section className="content-panel">
+      <section className="home">
         <MainPicture />
         <MainText />
         <h2 id="get-started">Get Started In Three Easy Steps!</h2>
