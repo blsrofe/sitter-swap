@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
 import './App.css'
+import {HashRouter} from "react-router-dom"
 import NavBar from './components/NavBar'
 import ContentPanel from './components/ContentPanel'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <NavBar />
-        <ContentPanel />
-      </div>
+      <HashRouter>
+        <div className="App">
+          <NavBar />
+          <ContentPanel />
+        </div>
+      </HashRouter>
     )
   }
 }

@@ -1,17 +1,15 @@
 import React, { Component } from 'react'
-import MainPicture from './MainPicture'
-import MainText from './MainText'
-import InfoPanel from './InfoPanel'
+import {Route} from "react-router-dom"
+import Home from './Home'
+import NewMemberBox from './NewMemberBox'
 
 class ContentPanel extends Component {
   render() {
     return(
-      <section className="content-panel">
-        <MainPicture />
-        <MainText />
-        <h2 id="get-started">Get Started In Three Easy Steps!</h2>
-        <InfoPanel />
-      </section>
+        <div className="content-panel">
+          <Route exact path="/" component={Home}/>
+          <Route path="/new" component={NewMemberBox}/>
+        </div>
     )
   }
 }
