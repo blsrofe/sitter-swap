@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import createBrowserHistory from 'history/createBrowserHistory'
+
+const history = createBrowserHistory()
 
 class NewMemberForm extends Component {
   constructor(){
@@ -39,12 +42,13 @@ class NewMemberForm extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(postInfo)
-    })
-    .then((response) => {
-      let id = response.id//I think response is coming back undefined
-      console.log(response)//get id from response and use it to create dogs
-      console.log(id)
-    })
+    }).then((response) => {
+      return response.json()
+    }).then((data) => {
+      let id = data.id
+      window.history.push('/new-dogs')
+
+    })//.catch
   }
 
   render() {
