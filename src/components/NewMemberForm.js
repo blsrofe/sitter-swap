@@ -33,7 +33,7 @@ class NewMemberForm extends Component {
     event.preventDefault()
     const userData = this.state//do we need both of these
     const postInfo = {userData}
-    fetch('http://localhost:3000/api/v1/users', {
+    fetch('https://sitter-swap-api.herokuapp.com/api/v1/users', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
@@ -41,7 +41,9 @@ class NewMemberForm extends Component {
       body: JSON.stringify(postInfo)
     })
     .then((response) => {
-      console.log(response)
+      let id = response.id//I think response is coming back undefined
+      console.log(response)//get id from response and use it to create dogs
+      console.log(id)
     })
   }
 
@@ -164,10 +166,10 @@ class NewMemberForm extends Component {
           <label htmlFor="profile">Profile: </label>
           <br></br>
           <textarea cols="60" rows="7" name="profile" wrap="virtual" onChange={this.handleChange}>
-            Tell others about you and your dogs!
+            Anything else you want people to know?
           </textarea>
           <br></br>
-          <button type="submit">Submit</button>
+          <button type="submit">Next</button>
         </form>
       </section>
     )
