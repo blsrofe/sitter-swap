@@ -31,9 +31,18 @@ class NewMemberForm extends Component {
   }
   handleSubmit(event) {
     event.preventDefault()
-    const newMemberData = this.state //change name of this varible to newMemberInfo
-    //axios.post('/new-user', { username, password }).then(response => response)use fetch here
-    console.log(newMemberData)
+    const userData = this.state//do we need both of these
+    const postInfo = {userData}
+    fetch('http://localhost:3000/api/v1/users', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(postInfo)
+    })
+    .then((response) => {
+      console.log(response)
+    })
   }
 
   render() {
