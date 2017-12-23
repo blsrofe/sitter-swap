@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import createBrowserHistory from 'history/createBrowserHistory'
+import history from '../objects/history'
 
-const history = createBrowserHistory()
 
 class NewMemberForm extends Component {
   constructor(){
@@ -46,7 +45,7 @@ class NewMemberForm extends Component {
       return response.json()
     }).then((data) => {
       let id = data.id
-      window.history.push('/new-dogs')
+      history.push('/new-dogs')
 
     })//.catch
   }

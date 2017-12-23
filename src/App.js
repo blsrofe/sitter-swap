@@ -1,23 +1,23 @@
 import React, { Component } from 'react'
 import './App.css'
-import {BrowserRouter} from "react-router-dom"
+import {Router} from "react-router-dom"
 import NavBar from './components/NavBar'
 import ContentPanel from './components/ContentPanel'
-import createBrowserHistory from 'history/createBrowserHistory'
+import history from './objects/history'
+// import createBrowserHistory from 'history/createBrowserHistory'
 
-
-const history = createBrowserHistory()
+//const history = createBrowserHistory()
 
 class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <Router history={history}>
         <div className="App">
           <NavBar />
           <ContentPanel />
         </div>
-      </BrowserRouter>
+      </Router>
     )
   }
 }
