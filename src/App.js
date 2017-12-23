@@ -4,9 +4,6 @@ import {Router} from "react-router-dom"
 import NavBar from './components/NavBar'
 import ContentPanel from './components/ContentPanel'
 import history from './objects/history'
-// import createBrowserHistory from 'history/createBrowserHistory'
-
-//const history = createBrowserHistory()
 
 class App extends Component {
 

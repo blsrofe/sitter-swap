@@ -33,7 +33,7 @@ class NewMemberForm extends Component {
   }
   handleSubmit(event) {
     event.preventDefault()
-    const userData = this.state//do we need both of these
+    const userData = this.state
     const postInfo = {userData}
     fetch('https://sitter-swap-api.herokuapp.com/api/v1/users', {
       method: 'post',
@@ -45,8 +45,7 @@ class NewMemberForm extends Component {
       return response.json()
     }).then((data) => {
       let id = data.id
-      history.push('/new-dogs')
-
+      history.push('/new-dogs', { owner_id: {id} })//maybe, how do i see this variable
     })//.catch
   }
 
