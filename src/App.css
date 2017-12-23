@@ -157,3 +157,27 @@ nav ul li a:hover {
   border: solid #3a606e 3px;
   border-radius: 10px;
 }
+
+.user-profile-box {
+  height: 600px;
+  width: 600px;
+  margin-left: 50px;
+  margin-top: 25px;
+  background-color: #7ea8be;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  box-shadow: 10px 10px 12px #888888;
+}
+
+.dog-info-box {
+  height: 400px;
+  width: 370px;
+  margin-left: 700px;
+  margin-top: -60px;
+  background-color: #c2948a;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  box-shadow: 10px 10px 12px #888888;
+}
