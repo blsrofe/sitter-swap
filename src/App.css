@@ -198,3 +198,12 @@ nav ul li a:hover {
   font-size: 15px;
   box-shadow: 5px 5px 10px black;
 }
+
+.close {
+  margin-top: -12px;
+}
+
+.inline {
+  margin-top: -34px;
+  margin-left: 240px;
+}

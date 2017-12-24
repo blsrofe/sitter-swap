@@ -51,7 +51,7 @@ class UserProfile extends Component {
                         childrenUnderTwo: data.children_under_two,
                         otherChildren: data.other_children,
                         cats: data.cats,
-                        profile: data.profile               
+                        profile: data.profile
         })
     }).catch((error) => {
         console.log(error)
@@ -61,7 +61,22 @@ class UserProfile extends Component {
   render() {
     return(
       <article className="user-profile">
-        <h2>Your Information</h2>
+        <h2>Information About {this.state.username}</h2>
+        <p className="close">{this.state.firstName + " " + this.state.lastName}</p>
+        <p className="close">{this.state.street}</p>
+        <p className="close">{this.state.city + ", " + this.state.state + "  " + this.state.zip}</p>
+        <p>{this.state.email}</p>
+        <p>{this.state.phoneNumber}</p>
+        <h3>The information below is visible to other members</h3>
+        <p>Major Crossstreets: {this.state.crossStreet1 + " and " + this.state.crossStreet2}</p>
+        <p>Zip Code: {this.state.zip}</p>
+        <p>Residence Type: {this.state.residenceType}</p>
+        <p className="inline">Fenced Yard: {this.state.fencedYard}</p>
+        <p>Cats: {this.state.cats}</p>
+        <p>Children Under 2: {this.state.childrenUnderTwo}</p>
+        <p className="inline">Children Between 2-12: {this.state.otherChildren}</p>
+        <br></br>
+        <p>{this.state.profile}</p>
       </article>
     )
   }
