@@ -6,7 +6,7 @@ class UserProfileBoxes extends Component {
   render() {
     return(
       <section className="user-profile-box">
-        <UserProfile />
+        <UserProfile id={this.props.match.params.id}/>
         <DogInfoBox />
       </section>
     )
