@@ -3,7 +3,6 @@ import handleErrors from '../objects/handleErrors'
 
 class UserProfile extends Component {
 
-  //const id = this.props.params.id//I think this is how I grab the user id this.props.match.params.id
   constructor(){
     super()
     this.state = {
@@ -62,21 +61,27 @@ class UserProfile extends Component {
     return(
       <article className="user-profile">
         <h2>Information About {this.state.username}</h2>
-        <p className="close">{this.state.firstName + " " + this.state.lastName}</p>
-        <p className="close">{this.state.street}</p>
-        <p className="close">{this.state.city + ", " + this.state.state + "  " + this.state.zip}</p>
-        <p>{this.state.email}</p>
-        <p>{this.state.phoneNumber}</p>
-        <h3>The information below is visible to other members</h3>
-        <p>Major Crossstreets: {this.state.crossStreet1 + " and " + this.state.crossStreet2}</p>
-        <p>Zip Code: {this.state.zip}</p>
-        <p>Residence Type: {this.state.residenceType}</p>
-        <p className="inline">Fenced Yard: {this.state.fencedYard}</p>
-        <p>Cats: {this.state.cats}</p>
-        <p>Children Under 2: {this.state.childrenUnderTwo}</p>
-        <p className="inline">Children Between 2-12: {this.state.otherChildren}</p>
+        <div className="personal-info">
+          <p className="close">{this.state.firstName + " " + this.state.lastName}</p>
+          <p className="close">{this.state.street}</p>
+          <p className="close">{this.state.city + ", " + this.state.state + "  " + this.state.zip}</p>
+          <p>{this.state.email}</p>
+          <p>{this.state.phoneNumber}</p>
+        </div>
         <br></br>
-        <p>{this.state.profile}</p>
+        <h3>The information below is visible to other members</h3>
+        <br></br>
+        <div className="personal-info2">
+          <p className="close">Major Crossstreets: {this.state.crossStreet1 + " and " + this.state.crossStreet2}</p>
+          <p className="close">Zip Code: {this.state.zip}</p>
+          <p>Residence Type: {this.state.residenceType}</p>
+          <p className="inline">Fenced Yard: {this.state.fencedYard}</p>
+          <p className="close">Cats: {this.state.cats}</p>
+          <p className="close">Children Under 2: {this.state.childrenUnderTwo}</p>
+          <p className="inline">Children Between 2-12: {this.state.otherChildren}</p>
+          <br></br>
+          <p>{this.state.profile}</p>
+        </div>
       </article>
     )
   }
