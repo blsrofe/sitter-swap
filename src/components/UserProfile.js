@@ -6,7 +6,7 @@ class UserProfile extends Component {
   render() {
     return(
       <article className="user-profile">
-        <p>User profile</p>
+        <h2>Your Information</h2>
       </article>
     )
   }

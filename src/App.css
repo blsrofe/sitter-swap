@@ -160,7 +160,7 @@ nav ul li a:hover {
 
 .user-profile-box {
   height: 600px;
-  width: 600px;
+  width: 475px;
   margin-left: 50px;
   margin-top: 25px;
   background-color: #7ea8be;
@@ -172,12 +172,29 @@ nav ul li a:hover {
 
 .dog-info-box {
   height: 400px;
-  width: 370px;
-  margin-left: 700px;
-  margin-top: -60px;
+  width: 545px;
+  margin-left: 540px;
+  margin-top: -75px;
   background-color: #c2948a;
   border-radius: 10px;
   padding: 10px;
   color: white;
   box-shadow: 10px 10px 12px #888888;
+}
+
+.dog-info-box th {
+  text-align: left;
+}
+
+.dog-info-box tr td {
+  padding: 5px;
+}
+
+.dog-info-box button {
+  margin-top: 10px;
+  background-color: #7ea8be;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  box-shadow: 5px 5px 10px black;
 }
