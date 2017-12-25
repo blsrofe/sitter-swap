@@ -3,6 +3,8 @@ import history from '../objects/history'
 import handleErrors from '../objects/handleErrors'
 
 //change age to number and sex to radio buttons
+//id={this.props.match.params.id} need to pass this in on DogInfoBox
+//build api end
 
 class NewDogsForm extends Component {
   constructor(){
@@ -12,7 +14,8 @@ class NewDogsForm extends Component {
       sex: '',
       age: '',
       breed: '',
-      notes: ''
+      notes: '',
+      owner_id: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -34,7 +37,7 @@ class NewDogsForm extends Component {
       .then((response) => {
         return response.json()
     }).then((data) => {
-        let id = data.id
+        let id = data.owner_id
         let historyString = "users/" + id + "/profile"
         history.push(historyString)
     }).catch((error) => {
