@@ -72,13 +72,13 @@ class UserProfile extends Component {
         <h3>The information below is visible to other members</h3>
         <br></br>
         <div className="personal-info2">
-          <p className="close">Major Crossstreets: {this.state.crossStreet1 + " and " + this.state.crossStreet2}</p>
-          <p className="close">Zip Code: {this.state.zip}</p>
-          <p>Residence Type: {this.state.residenceType}</p>
-          <p className="inline">Fenced Yard: {this.state.fencedYard}</p>
-          <p className="close">Cats: {this.state.cats}</p>
-          <p className="close">Children Under 2: {this.state.childrenUnderTwo}</p>
-          <p className="inline">Children Between 2-12: {this.state.otherChildren}</p>
+          <p className="close"><span id="bold">Major Cross Streets: </span>{this.state.crossStreet1 + " and " + this.state.crossStreet2}</p>
+          <p className="close"><span id="bold">Zip Code: </span>{this.state.zip}</p>
+          <p><span id="bold">Residence Type: </span>{this.state.residenceType}</p>
+          <p className="inline"><span id="bold">Fenced Yard: </span>{this.state.fencedYard}</p>
+          <p className="close"><span id="bold">Cats: </span>{this.state.cats}</p>
+          <p className="close"><span id="bold">Children Under 2: </span>{this.state.childrenUnderTwo}</p>
+          <p className="inline"><span id="bold">Children Between 2-12: </span>{this.state.otherChildren}</p>
           <br></br>
           <p>{this.state.profile}</p>
         </div>

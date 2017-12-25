@@ -219,3 +219,9 @@ nav ul li a:hover {
 .personal-info2 {
   margin-left: 10px;
 }
+
+#bold {
+  font-weight: bold;
+  font-style: italic;
+  color: #3a606e;
+}

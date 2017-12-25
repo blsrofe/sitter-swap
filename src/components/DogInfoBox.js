@@ -1,9 +1,28 @@
 import React, { Component } from 'react'
+import history from '../objects/history'
 
 class DogInfoBox extends Component {
   //name 15
   //breed 20
   //notes 70
+  constructor(){
+    super()
+    this.state = {
+      username: '',
+      firstName: '',
+      lastName: '',
+      crossStreet1: '',
+      crossStreet2: '',
+    }
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick(event) {
+    event.preventDefault()
+    let id = this.props.id
+    let historyString = "/users/" + id + "/new-dog"
+    history.push(historyString)
+  }
 
   render() {
     return(
@@ -22,7 +41,7 @@ class DogInfoBox extends Component {
           <tbody>
           </tbody>
         </table>
-        <button>Add Dog</button>
+        <button onClick={this.handleClick}>Add Dog</button>
       </article>
     )
   }

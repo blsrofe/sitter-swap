@@ -11,7 +11,7 @@ class NavBar extends Component {
         </ul>
         <ul id="right-nav">
   	      <li><a href="">Login</a></li>
-  	      <li><NavLink to="/new">Create Account</NavLink></li>
+  	      <li><NavLink to="/">Create Account</NavLink></li>
         </ul>
       </nav>
     )

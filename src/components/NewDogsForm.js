@@ -4,7 +4,7 @@ class NewDogsForm extends Component {
   render() {
     return(
       <article className="new-dog-form">
-        <p>New dog for</p>
+        <p>New dog form</p>
       </article>
     )
   }

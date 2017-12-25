@@ -13,7 +13,7 @@ class ContentPanel extends Component {
           <Route exact path="/" component={Home}/>
           <Route path="/new" component={NewMemberBox}/>
           <Route path="/users/:id/profile" component={UserProfileBoxes}/>
-          <Route path="/new-dog" component={NewDogsForm}/>
+          <Route path="/users/:id/new-dog" component={NewDogsForm}/>
         </div>
     )
   }
