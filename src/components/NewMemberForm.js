@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import history from '../objects/history'
-import memberForm from '../objects/memberForm'
 import handleErrors from '../objects/handleErrors'
 
 class NewMemberForm extends Component {

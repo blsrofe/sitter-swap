@@ -8,11 +8,11 @@ class DogInfoBox extends Component {
   constructor(){
     super()
     this.state = {
-      username: '',
-      firstName: '',
-      lastName: '',
-      crossStreet1: '',
-      crossStreet2: '',
+      name: '',
+      breed: '',
+      sex: '',
+      age: '',
+      notes: ''
     }
     this.handleClick = this.handleClick.bind(this)
   }
