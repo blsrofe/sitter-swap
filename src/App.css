@@ -157,3 +157,71 @@ nav ul li a:hover {
   border: solid #3a606e 3px;
   border-radius: 10px;
 }
+
+.user-profile {
+  height: 600px;
+  width: 475px;
+  margin-left: 50px;
+  margin-top: 25px;
+  background-color: #7ea8be;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  box-shadow: 10px 10px 12px #888888;
+}
+
+.dog-info-box {
+  height: 400px;
+  width: 545px;
+  margin-left: 600px;
+  margin-top: -618px;
+  background-color: #c2948a;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  box-shadow: 10px 10px 12px #888888;
+}
+
+.dog-info-box th {
+  text-align: left;
+}
+
+.dog-info-box tr td {
+  padding: 5px;
+}
+
+.dog-info-box button {
+  margin-top: 10px;
+  background-color: #7ea8be;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  box-shadow: 5px 5px 10px black;
+}
+
+.close {
+  margin-top: -12px;
+}
+
+.inline {
+  margin-top: -34px;
+  margin-left: 240px;
+}
+
+.user-profile-box h2{
+  text-align: center;
+}
+
+.personal-info {
+  text-align: center;
+}
+
+.personal-info2 {
+  margin-left: 10px;
+}
+
+#bold {
+  font-weight: bold;
+  font-style: italic;
+  color: #3a606e;
+}
