@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import history from '../objects/history'
 import handleErrors from '../objects/handleErrors'
 
-//change age to number and sex to radio buttons
 //id={this.props.match.params.id} need to pass this in on DogInfoBox
 //build api end
 
@@ -57,10 +56,11 @@ class NewDogsForm extends Component {
             <input name="breed" type="text" onChange={this.handleChange} required/>
           <br></br>
           <label htmlFor="age">Age: </label>
-            <input name="age" type="text" onChange={this.handleChange} required/>
+            <input name="age" type="number" min="0" max="30" onChange={this.handleChange} required/>
           <br></br>
-          <label htmlFor="sex">Sex: </label>
-            <input name="sex" type="text" onChange={this.handleChange} required/>
+          <label htmlFor="sex"></label>
+            <input type="radio" name="sex" value="male" onChange={this.handleChange} />Male<br></br>
+            <input type="radio" name="sex" value="female" onChange={this.handleChange}/>Female
           <br></br>
           <textarea cols="60" rows="3" name="notes" wrap="virtual" onChange={this.handleChange}>
             Additional Information
