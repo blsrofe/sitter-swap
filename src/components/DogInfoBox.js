@@ -21,7 +21,7 @@ class DogInfoBox extends Component {
     event.preventDefault()
     let id = this.props.id
     let historyString = "/users/" + id + "/new-dog"
-    history.push(historyString)
+    history.push(historyString, { owner_id: 12 })
   }
 
   render() {

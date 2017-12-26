@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import history from '../objects/history'
 import handleErrors from '../objects/handleErrors'
 
-//id={this.props.match.params.id} need to pass this in on DogInfoBox
+//id={this.props.match.params.id} need to pass this in on DogInfoBox history.match.params.id
 //build api end
 
 class NewDogsForm extends Component {
-  constructor(){
+  constructor() {
     super()
     this.state = {
       name: '',
@@ -18,6 +18,10 @@ class NewDogsForm extends Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+  }
+  componentDidMount() {
+    let id = this.props.match.params.id
+    this.setState({["owner_id"]: id})
   }
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value })
@@ -53,10 +57,10 @@ class NewDogsForm extends Component {
             <input name="name" type="text" onChange={this.handleChange} required/>
           <br></br>
           <label htmlFor="breed">Breed: </label>
-            <input name="breed" type="text" onChange={this.handleChange} required/>
+            <input name="breed" type="text" onChange={this.handleChange} />
           <br></br>
           <label htmlFor="age">Age: </label>
-            <input name="age" type="number" min="0" max="30" onChange={this.handleChange} required/>
+            <input name="age" type="number" min="0" max="30" onChange={this.handleChange}/>
           <br></br>
           <label htmlFor="sex"></label>
             <input type="radio" name="sex" value="male" onChange={this.handleChange} />Male<br></br>
