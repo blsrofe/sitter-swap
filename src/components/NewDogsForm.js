@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 import history from '../objects/history'
 import handleErrors from '../objects/handleErrors'
 
-//id={this.props.match.params.id} need to pass this in on DogInfoBox history.match.params.id
-//build api end
-
 class NewDogsForm extends Component {
   constructor() {
     super()
@@ -20,7 +17,7 @@ class NewDogsForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
   componentDidMount() {
-    let id = this.props.match.params.id
+    let id = Number(this.props.match.params.id)
     this.setState({["owner_id"]: id})
   }
   handleChange(event) {
@@ -28,8 +25,10 @@ class NewDogsForm extends Component {
   }
   handleSubmit(event) {
     event.preventDefault()
-    const userData = this.state
-    const postInfo = {userData}
+    const dogData = this.state
+    const postInfo = {dogData}
+    //http://localhost:3000
+    //https://sitter-swap-api.herokuapp.com/api/v1/dogs
     fetch('https://sitter-swap-api.herokuapp.com/api/v1/dogs', {
       method: 'post',
       headers: {
@@ -41,7 +40,7 @@ class NewDogsForm extends Component {
         return response.json()
     }).then((data) => {
         let id = data.owner_id
-        let historyString = "users/" + id + "/profile"
+        let historyString = "/users/" + id + "/profile"
         history.push(historyString)
     }).catch((error) => {
       console.log(error)
@@ -60,7 +59,7 @@ class NewDogsForm extends Component {
             <input name="breed" type="text" onChange={this.handleChange} />
           <br></br>
           <label htmlFor="age">Age: </label>
-            <input name="age" type="number" min="0" max="30" onChange={this.handleChange}/>
+            <input name="age" type="number" min="0" max="30" onChange={this.handleChange} required/>
           <br></br>
           <label htmlFor="sex"></label>
             <input type="radio" name="sex" value="male" onChange={this.handleChange} />Male<br></br>
