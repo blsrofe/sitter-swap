@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import history from '../objects/history'
-import memberForm from '../objects/memberForm'
 import handleErrors from '../objects/handleErrors'
 
 class NewMemberForm extends Component {
@@ -36,6 +35,8 @@ class NewMemberForm extends Component {
     event.preventDefault()
     const userData = this.state
     const postInfo = {userData}
+    //http://localhost:3000
+    //https://sitter-swap-api.herokuapp.com
     fetch('https://sitter-swap-api.herokuapp.com/api/v1/users', {
       method: 'post',
       headers: {
