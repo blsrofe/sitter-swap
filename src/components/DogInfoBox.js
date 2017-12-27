@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import history from '../objects/history'
+import handleErrors from '../objects/handleErrors'
 
 class DogInfoBox extends Component {
   //name 15
@@ -12,7 +13,8 @@ class DogInfoBox extends Component {
       breed: '',
       sex: '',
       age: '',
-      notes: ''
+      notes: '',
+      dogsArray: []
     }
     this.handleClick = this.handleClick.bind(this)
   }
@@ -22,6 +24,22 @@ class DogInfoBox extends Component {
     let id = this.props.id
     let historyString = "/users/" + id + "/new-dog"
     history.push(historyString, { owner_id: 12 })
+  }
+
+  componentDidMount() {
+    const API = 'https://sitter-swap-api.herokuapp.com/api/v1/users/'
+    let id = this.props.id
+    const dogs = '/dogs'
+    fetch(API + id + dogs)
+      .then(handleErrors)
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data)
+        this.setState({ dogsArray: data
+        })
+    }).catch((error) => {
+        console.log(error)
+    })
   }
 
   render() {
@@ -39,6 +57,16 @@ class DogInfoBox extends Component {
             </tr>
           </thead>
           <tbody>
+            {this.state.dogsArray.map((dogObject) => {//need to add unique keys to this array
+                    return(<tr>
+                            <td>{dogObject.name}</td>
+                            <td>{dogObject.age}</td>
+                            <td>{dogObject.breed}</td>
+                            <td>{dogObject.sex}</td>
+                            <td>{dogObject.notes}</td>
+                          </tr>
+                    )
+                 })}
           </tbody>
         </table>
         <button onClick={this.handleClick}>Add Dog</button>
