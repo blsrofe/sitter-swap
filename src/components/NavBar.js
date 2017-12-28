@@ -10,7 +10,7 @@ class NavBar extends Component {
   	      <li><NavLink to="/">Sitter Swap</NavLink></li>
         </ul>
         <ul id="right-nav">
-  	      <li><a href="">Login</a></li>
+  	      <li><NavLink to="/login">Sign In</NavLink></li>
   	      <li><NavLink to="/new">Create Account</NavLink></li>
         </ul>
       </nav>
