@@ -249,3 +249,9 @@ nav ul li a:hover {
   font-size: 15px;
   box-shadow: 5px 5px 10px black;
 }
+
+.user-profile-box h1 {
+  margin-left: 770px;
+  text-decoration: none;
+  /*this is not taking the underline away*/
+}
