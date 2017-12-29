@@ -30,10 +30,13 @@ class Login extends Component {
       .then((response) => {
         return response.json()
     }).then((data) => {
-      //if else passwords do not match if data nil? if data.id?
-        let id = data.id
-        let historyString = "/users/" + id + "/dashboard"
-        history.push(historyString)
+        if(data==="Invalid login credentials") {
+          alert("Your password and username do not match. Please try again or create an account.")
+        } else {
+          let id = data.id
+          let historyString = "/users/" + id + "/dashboard"
+          history.push(historyString)
+        }
     }).catch((error) => {
       console.log(error)
     })
