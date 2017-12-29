@@ -249,3 +249,35 @@ nav ul li a:hover {
   font-size: 15px;
   box-shadow: 5px 5px 10px black;
 }
+
+.user-profile-box h1 {
+  margin-left: 770px;
+  text-decoration: none;
+  /*this is not taking the underline away*/
+}
+
+.login-form {
+  height: 150px;
+  width: 310px;
+  margin-left: 350px;
+  margin-top: 50px;
+  background-color: #c2948a;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  box-shadow: 10px 10px 12px #888888;
+  padding-top: 50px;
+  padding-left: 50px;
+}
+
+.login-form input{
+  margin: 8px;
+}
+
+.login-form button {
+  background-color: #7ea8be;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  box-shadow: 5px 5px 10px black;
+}
