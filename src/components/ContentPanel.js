@@ -6,6 +6,7 @@ import UserProfileBoxes from './UserProfileBoxes'
 import NewDogsForm from './NewDogsForm'
 import Dashboard from './Dashboard'
 import Login from './Login'
+import NewTrip from './NewTrip'
 
 
 class ContentPanel extends Component {
@@ -18,6 +19,7 @@ class ContentPanel extends Component {
           <Route path="/users/:id/new-dog" component={NewDogsForm}/>
           <Route path="/users/:id/dashboard" component={Dashboard}/>
           <Route path="/login" component={Login}/>
+          <Route path="/new-trip" component={NewTrip}/>
         </div>
     )
   }

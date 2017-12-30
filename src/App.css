@@ -342,3 +342,28 @@ nav ul li a:hover {
 .user-profile-box a:hover {
   color: #7ea8be
 }
+
+.new-trip {
+  height: 400px;
+  width: 425px;
+  margin-left: 345px;
+  margin-top: 20px;
+  background-color: #7ea8be;
+  border-radius: 10px;
+  padding: 15px;
+  padding-left: 60px;
+  color: white;
+  box-shadow: 10px 10px 12px #888888;
+}
+
+.new-trip button {
+  background-color: #c2948a;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  box-shadow: 5px 5px 10px black;
+}
+
+.new-trip input{
+  margin: 8px;
+}

@@ -8,7 +8,7 @@ class ChoiceBox extends Component {
       <article className="choicebox">
         <h3><NavLink to={link}>View/Edit Profile</NavLink></h3>
         <h3><NavLink to="/">View Sitter Requests</NavLink></h3>
-        <h3><NavLink to="/">Make New Request</NavLink></h3>
+        <h3><NavLink to="/new-trip">Make New Request</NavLink></h3>
       </article>
     )
   }
