@@ -23,8 +23,7 @@ class SitterRequests extends Component {
       .then(handleErrors)
       .then(response => response.json())
       .then((data) => {
-        console.log(data)
-        this.setState({ dogsArray: data
+        this.setState({ tripsArray: data
         })
     }).catch((error) => {
         console.log(error)
@@ -38,22 +37,24 @@ class SitterRequests extends Component {
         <table>
           <thead>
             <tr>
-              <th style={{width:"100px"}}>Trip Name</th>
-              <th style={{width:"100px"}}>Requester</th>
-              <th style={{width:"100px"}}>Start Date</th>
-              <th style={{width:"100px"}}>End Date</th>
+              <th style={{width:"110px"}}>Trip Name</th>
+              <th style={{width:"110px"}}>Requester</th>
+              <th style={{width:"110px"}}>Start Date</th>
+              <th style={{width:"110px"}}>End Date</th>
               <th style={{width:"60px"}}>Nights</th>
-              <th style={{width:"525px"}}>Notes</th>
-              <th style={{width:"100px"}}></th>
+              <th style={{width:"600px"}}>Notes</th>
+              <th style={{width:"110px"}}></th>
             </tr>
           </thead>
           <tbody>
             {this.state.tripsArray.map((tripObject) => {//need to add unique keys to this array
+              let start = tripObject.start_date.substring(0,10)
+              let end = tripObject.end_date.substring(0,10)
                     return(<tr>
-                            <td>{tripObject.TripName}</td>
+                            <td>{tripObject.trip_name}</td>
                             <td>{tripObject.user_id}</td>
-                            <td>{tripObject.start_date}</td>
-                            <td>{tripObject.end_date}</td>
+                            <td>{start}</td>
+                            <td>{end}</td>
                             <td>{tripObject.num_nights}</td>
                             <td>{tripObject.notes}</td>
                             <td><button>Apply</button></td>

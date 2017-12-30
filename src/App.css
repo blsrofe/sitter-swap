@@ -387,3 +387,31 @@ nav ul li a:hover {
 .all-trips tr td {
   padding: 5px;
 }
+
+.all-trips h2 {
+  color: #3a606e;
+}
+
+.all-trips th {
+  padding-bottom: 10px;
+}
+
+.all-trips tbody tr:hover {
+  color: #3a606e;
+}
+
+.all-trips button {
+  background-color: #7ea8be;
+  border-radius: 10px;
+  color: white;
+  font-size: 12px;
+  box-shadow: 5px 5px 10px black;
+}
+
+.all-trips td {
+   border-bottom: 1px solid #000;
+ }
+
+ .all-trips table {
+   border-collapse: collapse;
+ }
