@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom"
 class NavBar extends Component {
   constructor(props) {
     super(props)
-    this.state = {isLoggedIn: false}
+    this.state = {isLoggedIn: false, username: ""}
   }
 
   render() {
