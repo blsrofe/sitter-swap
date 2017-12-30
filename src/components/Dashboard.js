@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
+import TripBox from './TripBox'
+import MailBox from './MailBox'
+import ChoiceBox from './ChoiceBox'
 
 class Dashboard extends Component {
   render() {
     return(
       <section className="dashboard">
-        <h1>This is the user dashboard</h1>
+        <TripBox id={this.props.match.params.id}/>
+        <MailBox id={this.props.match.params.id}/>
+        <ChoiceBox id={this.props.match.params.id}/>
       </section>
     )
   }

@@ -16,6 +16,7 @@ class Login extends Component {
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value })
   }
+
   handleSubmit(event) {
     event.preventDefault()
     const userData = this.state
@@ -34,6 +35,7 @@ class Login extends Component {
           alert("Your password and username do not match. Please try again or create an account.")
         } else {
           let id = data.id
+          let name = data.username
           let historyString = "/users/" + id + "/dashboard"
           history.push(historyString)
         }
