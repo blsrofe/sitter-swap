@@ -367,3 +367,23 @@ nav ul li a:hover {
 .new-trip input{
   margin: 8px;
 }
+
+.all-trips {
+  height: 600px;
+  width: 1085px;
+  margin-left: 50px;
+  margin-top: 30px;
+  background-color: #c2948a;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  box-shadow: 10px 10px 12px #888888;
+}
+
+.all-trips th {
+  text-align: left;
+}
+
+.all-trips tr td {
+  padding: 5px;
+}

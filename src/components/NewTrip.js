@@ -11,14 +11,14 @@ class NewTrip extends Component {
       endDate: '',
       numNights: '',
       notes: '',
-      user_id: ''
+      userId: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
   componentDidMount() {
     let id = Number(this.props.match.params.id)
-    this.setState({["user_id"]: id})
+    this.setState({["userId"]: id})
   }
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value })
