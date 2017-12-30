@@ -20,7 +20,7 @@ class ContentPanel extends Component {
           <Route path="/users/:id/new-dog" component={NewDogsForm}/>
           <Route path="/users/:id/dashboard" component={Dashboard}/>
           <Route path="/login" component={Login}/>
-          <Route path="/new-trip" component={NewTrip}/>
+          <Route path="/users/:id/new-trip" component={NewTrip}/>
           <Route path="/requests" component={SitterRequests}/>
         </div>
     )
