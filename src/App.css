@@ -290,3 +290,55 @@ nav ul li a:hover {
   font-size: 15px;
   box-shadow: 5px 5px 10px black;
 }
+
+.tripbox {
+  width: 800px;
+  height: 300px;
+  position: absolute;
+  top: 12px;
+  right: 30px;
+  background-color: #7ea8be;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  box-shadow: 10px 10px 12px #888888;
+}
+
+.mailbox {
+  width: 800px;
+  height: 300px;
+  position: absolute;
+  top: 350px;
+  right: 30px;
+  background-color: #c2948a;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  box-shadow: 10px 10px 12px #888888;
+}
+
+.choicebox {
+  height: 250px;
+  width: 280px;
+  position: absolute;
+  top: 12px;
+  left: 40px;
+}
+
+.choicebox a {
+  text-decoration: none;
+  color: #3a606e;
+}
+
+.choicebox a:hover {
+  color: #7ea8be
+}
+
+.user-profile-box a {
+  text-decoration: none;
+  color: #3a606e
+}
+
+.user-profile-box a:hover {
+  color: #7ea8be
+}
