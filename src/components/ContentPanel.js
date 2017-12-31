@@ -8,7 +8,6 @@ import Dashboard from './Dashboard'
 import Login from './Login'
 import NewTrip from './NewTrip'
 import SitterRequests from './SitterRequests'
-//fix
 
 class ContentPanel extends Component {
   render() {
@@ -21,7 +20,8 @@ class ContentPanel extends Component {
           <Route path="/users/:id/dashboard" component={Dashboard}/>
           <Route path="/login" component={Login}/>
           <Route path="/users/:id/new-trip" component={NewTrip}/>
-          <Route path="/requests" component={SitterRequests}/>
+          <Route path="/requests" component={SitterRequests} onEnter={requireAuth}/>
+          <Route path="/callback" component={Callback} />
         </div>
     )
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import history from '../objects/history'
 import handleErrors from '../objects/handleErrors'
+import { getAccessToken } from '../objects/AuthService'
 
 class SitterRequests extends Component {
   constructor(){
@@ -19,7 +20,13 @@ class SitterRequests extends Component {
   // }
 
   componentDidMount() {
-    fetch('https://sitter-swap-api.herokuapp.com/api/v1/trips')
+    fetch('https://sitter-swap-api.herokuapp.com/api/v1/trips', {
+      method: 'get',
+      headers: {
+        'Authorization': `Bearer ${getAccessToken()}`
+      }
+    })
+    // fetch('https://sitter-swap-api.herokuapp.com/api/v1/trips')
       .then(handleErrors)
       .then(response => response.json())
       .then((data) => {
