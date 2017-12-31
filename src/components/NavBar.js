@@ -32,6 +32,7 @@ class NavBar extends Component {
   	      <li><NavLink to="/" id="title">Sitter Swap</NavLink></li>
         </ul>
         <ul id="right-nav">
+          <li>
             {
               (isLoggedIn()) ? ( <button className="logout" onClick={() => logout()}>Log out </button> ) : ( <button className="login" onClick={() => login()}>Log In</button> )
             }
