@@ -9,22 +9,6 @@ class NavBar extends Component {
   }
 
   render() {
-
-    // const isLoggedIn = this.state.isLoggedIn
-    // let rightNav = null
-    //
-    // if (isLoggedIn) {
-    //   rightNav = (<ul id="right-nav">
-    //                 <li><NavLink to="/">Welcome, User</NavLink></li>
-    //                 <li><NavLink to="/logout">Logout</NavLink></li>
-    //               </ul>)
-    // } else {
-    //   rightNav = (<ul id="right-nav">
-    //                 <li><NavLink to="/login">Sign In</NavLink></li>
-    //                 <li><NavLink to="/new">Create Account</NavLink></li>
-    //               </ul>)
-    // }
-
     return (
       <nav className="navbar">
         <ul id="left-nav">
