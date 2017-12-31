@@ -342,3 +342,76 @@ nav ul li a:hover {
 .user-profile-box a:hover {
   color: #7ea8be
 }
+
+.new-trip {
+  height: 400px;
+  width: 425px;
+  margin-left: 345px;
+  margin-top: 20px;
+  background-color: #7ea8be;
+  border-radius: 10px;
+  padding: 15px;
+  padding-left: 60px;
+  color: white;
+  box-shadow: 10px 10px 12px #888888;
+}
+
+.new-trip button {
+  background-color: #c2948a;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  box-shadow: 5px 5px 10px black;
+}
+
+.new-trip input{
+  margin: 8px;
+}
+
+.all-trips {
+  height: 600px;
+  width: 1085px;
+  margin-left: 50px;
+  margin-top: 30px;
+  background-color: #c2948a;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  box-shadow: 10px 10px 12px #888888;
+}
+
+.all-trips th {
+  text-align: left;
+}
+
+.all-trips tr td {
+  padding: 5px;
+}
+
+.all-trips h2 {
+  color: #3a606e;
+}
+
+.all-trips th {
+  padding-bottom: 10px;
+}
+
+.all-trips tbody tr:hover {
+  color: #3a606e;
+}
+
+.all-trips button {
+  background-color: #7ea8be;
+  border-radius: 10px;
+  color: white;
+  font-size: 12px;
+  box-shadow: 5px 5px 10px black;
+}
+
+.all-trips td {
+   border-bottom: 1px solid #000;
+ }
+
+ .all-trips table {
+   border-collapse: collapse;
+ }
