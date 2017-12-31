@@ -9,7 +9,7 @@ import Login from './Login'
 import NewTrip from './NewTrip'
 import SitterRequests from './SitterRequests'
 import Callback from './Callback'
-import { requireAuth } from './objects/AuthService'
+import { requireAuth } from '../objects/AuthService'
 
 
 class ContentPanel extends Component {

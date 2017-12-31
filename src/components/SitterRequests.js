@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import history from '../objects/history'
 import handleErrors from '../objects/handleErrors'
-import { getAccessToken } from './AuthService'
+import { getAccessToken } from '../objects/AuthService'
 
 class SitterRequests extends Component {
   constructor(){
