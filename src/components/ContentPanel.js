@@ -8,6 +8,7 @@ import Dashboard from './Dashboard'
 import Login from './Login'
 import NewTrip from './NewTrip'
 import SitterRequests from './SitterRequests'
+import Callback from './Callback'
 
 
 class ContentPanel extends Component {
