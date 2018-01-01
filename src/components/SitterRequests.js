@@ -19,7 +19,11 @@ class SitterRequests extends Component {
   // }
 
   componentDidMount() {
-    fetch('https://sitter-swap-api.herokuapp.com/api/v1/trips')
+    fetch('https://sitter-swap-api.herokuapp.com/api/v1/trips', {
+      method: 'get',
+      headers: {}  
+    })
+    // fetch('https://sitter-swap-api.herokuapp.com/api/v1/trips')
       .then(handleErrors)
       .then(response => response.json())
       .then((data) => {
