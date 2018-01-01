@@ -380,27 +380,27 @@ nav ul li a:hover {
   box-shadow: 10px 10px 12px #888888;
 }
 
-.all-trips th {
+.format-table th {
   text-align: left;
 }
 
-.all-trips tr td {
+.format-table tr td {
   padding: 5px;
 }
 
-.all-trips h2 {
+.format-table h2 {
   color: #3a606e;
 }
 
-.all-trips th {
+.format-table th {
   padding-bottom: 10px;
 }
 
-.all-trips tbody tr:hover {
+.format-table tbody tr:hover {
   color: #3a606e;
 }
 
-.all-trips button {
+.format-table button {
   background-color: #7ea8be;
   border-radius: 10px;
   color: white;
@@ -408,10 +408,18 @@ nav ul li a:hover {
   box-shadow: 5px 5px 10px black;
 }
 
-.all-trips td {
+.format-table td {
    border-bottom: 1px solid #000;
  }
 
- .all-trips table {
+ .format-table table {
    border-collapse: collapse;
+ }
+
+ .current-requests button {
+   background-color: #3a606e;
+   border-radius: 10px;
+   color: white;
+   font-size: 12px;
+   box-shadow: 5px 5px 10px black;
  }

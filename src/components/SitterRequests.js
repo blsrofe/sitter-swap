@@ -36,7 +36,7 @@ class SitterRequests extends Component {
 
   render() {
     return(
-      <article className="all-trips">
+      <article className="all-trips format-table">
         <h2>Sitter Requests</h2>
         <table>
           <thead>

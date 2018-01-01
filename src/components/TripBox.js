@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
+import CurrentRequests from './CurrentRequests'
+
 
 class TripBox extends Component {
   render() {
     return(
       <article className="tripbox">
-        <p>TripBox</p>
+        <CurrentRequests id={this.props.id}/>
       </article>
     )
   }

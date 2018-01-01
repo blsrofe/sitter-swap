@@ -34,7 +34,6 @@ class DogInfoBox extends Component {
       .then(handleErrors)
       .then(response => response.json())
       .then((data) => {
-        console.log(data)
         this.setState({ dogsArray: data
         })
     }).catch((error) => {
