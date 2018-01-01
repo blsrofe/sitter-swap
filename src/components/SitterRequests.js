@@ -21,7 +21,7 @@ class SitterRequests extends Component {
   componentDidMount() {
     fetch('https://sitter-swap-api.herokuapp.com/api/v1/trips', {
       method: 'get',
-      headers: {}  
+      headers: {}
     })
     // fetch('https://sitter-swap-api.herokuapp.com/api/v1/trips')
       .then(handleErrors)
@@ -56,7 +56,7 @@ class SitterRequests extends Component {
               let end = tripObject.end_date.substring(0,10)
                     return(<tr>
                             <td>{tripObject.trip_name}</td>
-                            <td>{tripObject.user_id}</td>
+                            <td>{tripObject.username}</td>
                             <td>{start}</td>
                             <td>{end}</td>
                             <td>{tripObject.num_nights}</td>
