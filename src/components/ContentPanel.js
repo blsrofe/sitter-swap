@@ -8,6 +8,7 @@ import Dashboard from './Dashboard'
 import Login from './Login'
 import NewTrip from './NewTrip'
 import SitterRequests from './SitterRequests'
+import UsersShow from './UsersShow'
 
 class ContentPanel extends Component {
   render() {
@@ -21,6 +22,7 @@ class ContentPanel extends Component {
           <Route path="/login" component={Login}/>
           <Route path="/users/:id/new-trip" component={NewTrip}/>
           <Route path="/requests" component={SitterRequests}/>
+          <Route exact path="/users/:id" component={UsersShow}/>
         </div>
     )
   }

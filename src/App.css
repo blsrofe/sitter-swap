@@ -448,3 +448,60 @@ ul.tripbox-header li h3:hover{
 ul.tripbox-header li h3{
   display: inline-block;
 }
+
+.show-box {
+  height: 400px;
+  width: 475px;
+  margin-left: 50px;
+  margin-top: 25px;
+  background-color: #7ea8be;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  box-shadow: 10px 10px 12px #888888;
+}
+
+.public-dog-info-box {
+  height: 400px;
+  width: 545px;
+  margin-left: 600px;
+  margin-top: -415px;
+  background-color: #c2948a;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  box-shadow: 10px 10px 12px #888888;
+}
+
+.public-dog-info-box th {
+  text-align: left;
+  color: #3a606e;
+}
+
+.public-dog-info-box tr td {
+  padding: 5px;
+}
+
+.public-dog-info-box button {
+  margin-top: 10px;
+  background-color: #7ea8be;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  box-shadow: 5px 5px 10px black;
+}
+
+.public-profile-dashboard a {
+  color: #3a606e;
+  margin-left: 500px;
+  text-decoration: none;
+}
+
+.public-profile-dashboard a:hover {
+  color: black;
+}
+
+.all-trips a {
+  text-decoration: none;
+  color: white;
+}
