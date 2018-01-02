@@ -380,27 +380,27 @@ nav ul li a:hover {
   box-shadow: 10px 10px 12px #888888;
 }
 
-.all-trips th {
+.format-table th {
   text-align: left;
 }
 
-.all-trips tr td {
+.format-table tr td {
   padding: 5px;
 }
 
-.all-trips h2 {
+.format-table h2 {
   color: #3a606e;
 }
 
-.all-trips th {
+.format-table th {
   padding-bottom: 10px;
 }
 
-.all-trips tbody tr:hover {
+.format-table tbody tr:hover {
   color: #3a606e;
 }
 
-.all-trips button {
+.format-table button {
   background-color: #7ea8be;
   border-radius: 10px;
   color: white;
@@ -408,10 +408,100 @@ nav ul li a:hover {
   box-shadow: 5px 5px 10px black;
 }
 
-.all-trips td {
+.format-table td {
    border-bottom: 1px solid #000;
  }
 
- .all-trips table {
+ .format-table table {
    border-collapse: collapse;
  }
+
+ .current-requests button {
+   background-color: #3a606e;
+   border-radius: 10px;
+   color: white;
+   font-size: 12px;
+   box-shadow: 5px 5px 10px black;
+ }
+
+ ul.tripbox-header li {
+   display: inline;
+   list-style-type: none;
+   margin: 0;
+   padding: 12px;
+   margin-bottom: 20px;
+ }
+
+ ul.tripbox-header {
+  background-color: #3a606e;
+  padding: 0;
+  border-radius: 6px;
+  margin-top: -2px;
+  height: 50px;
+  width: 425px;
+}
+
+ul.tripbox-header li h3:hover{
+  color: #c2948a;
+}
+
+ul.tripbox-header li h3{
+  display: inline-block;
+}
+
+.show-box {
+  height: 400px;
+  width: 475px;
+  margin-left: 50px;
+  margin-top: 25px;
+  background-color: #7ea8be;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  box-shadow: 10px 10px 12px #888888;
+}
+
+.public-dog-info-box {
+  height: 400px;
+  width: 545px;
+  margin-left: 600px;
+  margin-top: -415px;
+  background-color: #c2948a;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  box-shadow: 10px 10px 12px #888888;
+}
+
+.public-dog-info-box th {
+  text-align: left;
+  color: #3a606e;
+}
+
+.public-dog-info-box tr td {
+  padding: 5px;
+}
+
+.public-dog-info-box button {
+  margin-top: 10px;
+  background-color: #7ea8be;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  box-shadow: 5px 5px 10px black;
+}
+
+.public-profile-dashboard a {
+  color: #3a606e;
+  margin-left: 500px;
+  text-decoration: none;
+}
+
+.public-profile-dashboard a:hover {
+  color: black;
+}
+
+.all-trips a {
+  text-decoration: none;
+  color: white;
+}
