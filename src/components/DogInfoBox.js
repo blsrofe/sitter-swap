@@ -17,13 +17,35 @@ class DogInfoBox extends Component {
       dogsArray: []
     }
     this.handleClick = this.handleClick.bind(this)
+    this.deleteDog = this.deleteDog.bind(this)
+    this.editDog = this.editDog.bind(this)
   }
 
   handleClick(event) {
     event.preventDefault()
     let id = this.props.id
     let historyString = "/users/" + id + "/new-dog"
-    history.push(historyString, { owner_id: 12 })
+    history.push(historyString)
+  }
+
+  editDog = (event) => {
+    event.preventDefault()
+
+  }
+
+  deleteDog = (id, event) => {
+    event.preventDefault()
+    const API = 'https://sitter-swap-api.herokuapp.com/api/v1/dogs/'
+    fetch(API + id, {
+      method: 'Delete',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(id)
+    }).then(handleErrors)
+      .catch((error) => {
+        console.log(error)
+    })
   }
 
   componentDidMount() {
@@ -53,6 +75,8 @@ class DogInfoBox extends Component {
               <th style={{width:"100px"}}>Breed</th>
               <th style={{width:"40px"}}>Sex</th>
               <th style={{width:"130px"}}>Notes</th>
+              <th style={{width:"60px"}}></th>
+              <th style={{width:"60px"}}></th>
             </tr>
           </thead>
           <tbody>
@@ -63,6 +87,8 @@ class DogInfoBox extends Component {
                             <td>{dogObject.breed}</td>
                             <td>{dogObject.sex}</td>
                             <td>{dogObject.notes}</td>
+                            <td><button onClick={this.editDog}>Edit</button></td>
+                            <td><button onClick={this.deleteDog.bind(this, dogObject.id)}>Delete</button></td>
                           </tr>
                     )
                  })}
