@@ -9,7 +9,6 @@ import Login from './Login'
 import NewTrip from './NewTrip'
 import SitterRequests from './SitterRequests'
 
-
 class ContentPanel extends Component {
   render() {
     return(
