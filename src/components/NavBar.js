@@ -9,14 +9,14 @@ class NavBar extends Component {
   }
 
   componentWillMount() {
-    this.setState({ isLoggedIn: this.props.isLoggedIn})
+    let logged = localStorage.getItem('loggedIn')
+    this.setState({isLoggedIn: logged})
   }
 
   render() {
 
     const isLoggedIn = this.state.isLoggedIn
     let rightNav = null
-    console.log(isLoggedIn)
 
     if (isLoggedIn) {
       rightNav = (<ul id="right-nav">

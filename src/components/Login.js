@@ -45,6 +45,7 @@ class Login extends Component {
           let id = data.id
           let name = data.username
           this.setState({ loggedIn: true })
+          localStorage.setItem('loggedIn', true)
           let historyString = "/users/" + id + "/dashboard"
           history.push(historyString)
         }
