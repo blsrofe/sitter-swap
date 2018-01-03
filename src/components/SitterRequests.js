@@ -55,11 +55,11 @@ class SitterRequests extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.tripsArray.map((tripObject) => {//need to add unique keys to this array
+            {this.state.tripsArray.map((tripObject) => {
               let start = tripObject.start_date.substring(0,10)
               let end = tripObject.end_date.substring(0,10)
               let requestShow = "/users/" + tripObject.user_id
-                    return(<tr>
+                    return(<tr key={tripObject.id}>
                             <td>{tripObject.trip_name}</td>
                             <td>{tripObject.username}</td>
                             <td>{start}</td>

@@ -42,6 +42,7 @@ class Login extends Component {
         if(data==="Invalid login credentials") {
           alert("Your password and username do not match. Please try again or create an account.")
         } else {
+          console.log(data)
           let id = data.id
           let name = data.username
           this.setState({ loggedIn: true })

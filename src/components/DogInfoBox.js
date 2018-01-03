@@ -80,8 +80,8 @@ class DogInfoBox extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.dogsArray.map((dogObject) => {//need to add unique keys to this array
-                    return(<tr>
+            {this.state.dogsArray.map((dogObject) => {
+                    return(<tr key={dogObject.id}>
                             <td>{dogObject.name}</td>
                             <td>{dogObject.age}</td>
                             <td>{dogObject.breed}</td>

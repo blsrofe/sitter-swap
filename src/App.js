@@ -9,12 +9,13 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      loggedIn: false
+      loggedIn: "false"
     }
   }
 
   getLoggedStatus = (dataFromChild) => {
-    this.setState({ loggedIn: dataFromChild })
+    let status = localStorage.getItem('loggedIn')
+    this.setState({ loggedIn: status })
   }
 
   render() {
