@@ -34,13 +34,8 @@ class Login extends Component {
         if(data==="Invalid login credentials") {
           alert("Your password and username do not match. Please try again or create an account.")
         } else {
-          console.log(data)
           let id = data.id
-          let name = data.username
-          let token = data.token
-          localStorage.setItem('loggedIn', "true")
-          localStorage.setItem('username', name)
-          localStorage.setItem('token', token)
+          this.setStorage(data)
           this.props.passToParent("true")
           let historyString = "/users/" + id + "/dashboard"
           history.push(historyString)
@@ -48,6 +43,16 @@ class Login extends Component {
     }).catch((error) => {
       console.log(error)
     })
+  }
+
+  setStorage = (data) => {
+    let id = data.id
+    let name = data.username
+    let token = data.token
+    localStorage.setItem('loggedIn', "true")
+    localStorage.setItem('username', name)
+    localStorage.setItem('token', token)
+    localStorage.setItem('id', id)
   }
 
   render() {
