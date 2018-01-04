@@ -7,7 +7,8 @@ class Login extends Component {
     super()
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      token: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -35,13 +36,24 @@ class Login extends Component {
           alert("Your password and username do not match. Please try again or create an account.")
         } else {
           let id = data.id
-          let name = data.username
+          this.setStorage(data)
+          this.props.passToParent("true")
           let historyString = "/users/" + id + "/dashboard"
           history.push(historyString)
         }
     }).catch((error) => {
       console.log(error)
     })
+  }
+
+  setStorage = (data) => {
+    let id = data.id
+    let name = data.username
+    let token = data.token
+    localStorage.setItem('loggedIn', "true")
+    localStorage.setItem('username', name)
+    localStorage.setItem('token', token)
+    localStorage.setItem('id', id)
   }
 
   render() {

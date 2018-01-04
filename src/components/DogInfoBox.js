@@ -40,15 +40,21 @@ class DogInfoBox extends Component {
       method: 'Delete',
       headers: {
         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(id)
+      }
     }).then(handleErrors)
+      .then(()=> {
+        this.fetchDogs()
+      })
       .catch((error) => {
         console.log(error)
     })
   }
 
   componentDidMount() {
+    this.fetchDogs()
+  }
+
+  fetchDogs = () => {
     const API = 'https://sitter-swap-api.herokuapp.com/api/v1/users/'
     let id = this.props.id
     const dogs = '/dogs'
@@ -80,8 +86,8 @@ class DogInfoBox extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.dogsArray.map((dogObject) => {//need to add unique keys to this array
-                    return(<tr>
+            {this.state.dogsArray.map((dogObject) => {
+                    return(<tr key={dogObject.id}>
                             <td>{dogObject.name}</td>
                             <td>{dogObject.age}</td>
                             <td>{dogObject.breed}</td>

@@ -38,10 +38,10 @@ class CurrentRequests extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.requestArray.map((requestObject) => {//need to add unique keys to this array
+            {this.state.requestArray.map((requestObject) => {
               let start = requestObject.start_date.substring(0,10)
               let end = requestObject.end_date.substring(0,10)
-                    return(<tr>
+                    return(<tr key={requestObject.id}>
                             <td>{requestObject.trip_name}</td>
                             <td>{start}</td>
                             <td>{end}</td>

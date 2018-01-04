@@ -4,17 +4,19 @@ import {NavLink} from "react-router-dom"
 class NavBar extends Component {
   constructor(props) {
     super(props)
-    this.state = {isLoggedIn: false, username: ""}
+    this.state = {isLoggedIn: "",
+                  username: ""}
   }
 
-  render() {
 
-    const isLoggedIn = this.state.isLoggedIn
+  render() {
+    const isLoggedIn = localStorage.getItem('loggedIn')
+    const name = localStorage.getItem('username')
     let rightNav = null
 
-    if (isLoggedIn) {
+    if (isLoggedIn === "true") {
       rightNav = (<ul id="right-nav">
-                    <li><NavLink to="/">Welcome, User</NavLink></li>
+                    <li><NavLink to="/">Welcome, {name}</NavLink></li>
                     <li><NavLink to="/logout">Logout</NavLink></li>
                   </ul>)
     } else {
