@@ -23,7 +23,8 @@ class UserProfile extends Component {
       childrenUnderTwo: '',
       otherChildren: '',
       cats: '',
-      profile: ''
+      profile: '',
+      token: localStorage.getItem("token")
     }
   }
 

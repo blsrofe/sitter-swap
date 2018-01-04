@@ -40,8 +40,7 @@ class DogInfoBox extends Component {
       method: 'Delete',
       headers: {
         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(id)
+      }
     }).then(handleErrors)
       .catch((error) => {
         console.log(error)
@@ -49,6 +48,8 @@ class DogInfoBox extends Component {
   }
 
   componentDidMount() {
+    //http://localhost:3000
+    //https://sitter-swap-api.herokuapp.com
     const API = 'https://sitter-swap-api.herokuapp.com/api/v1/users/'
     let id = this.props.id
     const dogs = '/dogs'
