@@ -42,14 +42,19 @@ class DogInfoBox extends Component {
         'Content-Type': 'application/json'
       }
     }).then(handleErrors)
+      .then(()=> {
+        this.fetchDogs()
+      })
       .catch((error) => {
         console.log(error)
     })
   }
 
   componentDidMount() {
-    //http://localhost:3000
-    //https://sitter-swap-api.herokuapp.com
+    this.fetchDogs()
+  }
+
+  fetchDogs = () => {
     const API = 'https://sitter-swap-api.herokuapp.com/api/v1/users/'
     let id = this.props.id
     const dogs = '/dogs'
