@@ -11,11 +11,12 @@ class NavBar extends Component {
 
   render() {
     const isLoggedIn = localStorage.getItem('loggedIn')
+    const name = localStorage.getItem('username')
     let rightNav = null
 
     if (isLoggedIn === "true") {
       rightNav = (<ul id="right-nav">
-                    <li><NavLink to="/">Welcome, User</NavLink></li>
+                    <li><NavLink to="/">Welcome, {name}</NavLink></li>
                     <li><NavLink to="/logout">Logout</NavLink></li>
                   </ul>)
     } else {

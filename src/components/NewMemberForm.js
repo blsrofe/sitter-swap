@@ -48,8 +48,12 @@ class NewMemberForm extends Component {
         return response.json()
     }).then((data) => {
         let id = data.id
+        let name = data.name
+        let token = data.token
         let historyString = "users/" + id + "/profile"
         localStorage.setItem('loggedIn', "true")
+        localStorage.setItem('username', name)
+        localStorage.setItem('token', token)
         this.props.passToParent("true")
         history.push(historyString)
     }).catch((error) => {

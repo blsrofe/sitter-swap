@@ -37,7 +37,10 @@ class Login extends Component {
           console.log(data)
           let id = data.id
           let name = data.username
+          let token = data.token
           localStorage.setItem('loggedIn', "true")
+          localStorage.setItem('username', name)
+          localStorage.setItem('token', token)
           this.props.passToParent("true")
           let historyString = "/users/" + id + "/dashboard"
           history.push(historyString)
