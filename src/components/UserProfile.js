@@ -29,10 +29,21 @@ class UserProfile extends Component {
   }
 
   componentDidMount() {
-    const API = 'https://sitter-swap-api.herokuapp.com/api/v1/users/'
+    //http://localhost:3000
+    //https://sitter-swap-api.herokuapp.com
+    const API = 'http://localhost:3000/api/v1/users/'
     let id = this.props.id
-    fetch(API + id)
-      .then(handleErrors)
+    let token = this.state.token
+    let username = localStorage.getItem("username")
+    let authString = token + " " + username
+
+    fetch(API + id, {
+      method: 'get',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization' : authString
+      }
+    }).then(handleErrors)
       .then(response => response.json())
       .then((data) => {
         this.setState({ username: data.username,
