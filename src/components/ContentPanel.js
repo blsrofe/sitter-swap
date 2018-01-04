@@ -19,18 +19,6 @@ class ContentPanel extends Component {
     }
   }
 
-  // passUp = () => {
-  //   let status = this.state.loggedIn
-  //   this.props.passToParent(status)
-  // }
-
-  componentWillUpdate(nextProps, nextState) {
-    let status = nextState.loggedIn
-    if (nextState.loggedIn == true && this.state.loggedIn == false) {
-      this.props.passToParent(status)
-    }
-  }
-
   getLoggedStatus = (dataFromChild) => {
     let status = localStorage.getItem('loggedIn')
     this.props.passToParent(status)

@@ -7,8 +7,7 @@ class Login extends Component {
     super()
     this.state = {
       username: '',
-      password: '',
-      loggedIn: false
+      password: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -16,13 +15,6 @@ class Login extends Component {
 
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value })
-  }
-
-  componentWillUpdate(nextProps, nextState) {
-    let status = nextState.loggedIn
-    if (nextState.loggedIn == true && this.state.loggedIn == false) {
-      this.props.passToParent(status)
-    }
   }
 
   handleSubmit(event) {
@@ -45,8 +37,8 @@ class Login extends Component {
           console.log(data)
           let id = data.id
           let name = data.username
-          this.setState({ loggedIn: true })
-          localStorage.setItem('loggedIn', true)
+          localStorage.setItem('loggedIn', "true")
+          this.props.passToParent("true")
           let historyString = "/users/" + id + "/dashboard"
           history.push(historyString)
         }

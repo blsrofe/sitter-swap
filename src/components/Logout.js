@@ -7,34 +7,27 @@ class Logout extends Component {
     super()
     this.state = {
       username: '',
-      password: '',
-      loggedIn: true
+      password: ''
     }
   }
-
-  // componentWillUpdate(nextProps, nextState) {
-  //   let status = nextState.loggedIn
-  //   if (nextState.loggedIn == false && this.state.loggedIn == true) {
-  //     this.props.passToParent(status)
-  //   }
-  // }
 
   componentDidMount() {
     //https://sitter-swap-api.herokuapp.com/api/v1/users/
     //http://localhost:3000/api/v1/logout
-    let id = this.props.id//there are no props, need to get this from local strorage
+    let id = 1//there are no props, need to get this from local strorage
     fetch('https://sitter-swap-api.herokuapp.com/api/v1/logout', {
       method: 'put',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(id)
+      body: JSON.stringify({id})
     }).then(handleErrors)
     .then(response => response.json())
     .then((data) => {
-      this.setState({ loggedIn: false })
-      localStorage.setItem('loggedIn', false)
-      this.props.passToParent(false)
+      this.setState({ loggedIn: "false" })
+      localStorage.setItem('loggedIn', "false")
+      this.props.passToParent("false")
+      history.push('/')
     }).catch((error) => {
         console.log(error)
     })
