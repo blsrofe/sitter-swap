@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {Route} from "react-router-dom"
 import Home from './Home'
-import NewMemberBox from './NewMemberBox'
+import NewMemberForm from './NewMemberForm'
 import UserProfileBoxes from './UserProfileBoxes'
 import NewDogsForm from './NewDogsForm'
 import Dashboard from './Dashboard'
@@ -28,7 +28,7 @@ class ContentPanel extends Component {
     return(
         <div className="content-panel">
           <Route exact path="/" component={Home}/>
-          <Route path="/new" component={NewMemberBox}/>
+          <Route path="/new" render={()=><NewMemberForm passToParent={this.getLoggedStatus}/>}/>
           <Route path="/users/:id/profile" component={UserProfileBoxes}/>
           <Route path="/users/:id/new-dog" component={NewDogsForm}/>
           <Route path="/users/:id/dashboard" component={Dashboard}/>

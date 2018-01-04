@@ -49,6 +49,8 @@ class NewMemberForm extends Component {
     }).then((data) => {
         let id = data.id
         let historyString = "users/" + id + "/profile"
+        localStorage.setItem('loggedIn', "true")
+        this.props.passToParent("true")
         history.push(historyString)
     }).catch((error) => {
       console.log(error)
