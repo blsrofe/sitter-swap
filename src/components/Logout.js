@@ -14,7 +14,7 @@ class Logout extends Component {
   componentDidMount() {
     //https://sitter-swap-api.herokuapp.com/api/v1/users/
     //http://localhost:3000/api/v1/logout
-    let id = 1//there are no props, need to get this from local strorage
+    let id = localStorage.getItem("id")
     fetch('https://sitter-swap-api.herokuapp.com/api/v1/logout', {
       method: 'put',
       headers: {
@@ -26,6 +26,9 @@ class Logout extends Component {
     .then((data) => {
       this.setState({ loggedIn: "false" })
       localStorage.setItem('loggedIn', "false")
+      localStorage.removeItem('token')
+      localStorage.removeItem('username')
+      localStorage.removeItem('id')
       this.props.passToParent("false")
       history.push('/')
     }).catch((error) => {
