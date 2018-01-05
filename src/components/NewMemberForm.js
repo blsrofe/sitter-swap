@@ -6,14 +6,12 @@ class NewMemberForm extends Component {
   constructor(){
     super()
     this.state = {
-      username: '',
       firstName: '',
       lastName: '',
       crossStreet1: '',
       crossStreet2: '',
       email: '',
       phoneNumber: '',
-      password: '',
       street: '',
       city: '',
       state: '',
@@ -23,7 +21,8 @@ class NewMemberForm extends Component {
       childrenUnderTwo: '',
       otherChildren: '',
       cats: '',
-      profile: ''
+      profile: '',
+      token: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -33,11 +32,13 @@ class NewMemberForm extends Component {
   }
   handleSubmit(event) {
     event.preventDefault()
+    let idToken = localStorage.getItem("id_token")
+    this.setState({ token: idToken })
     const userData = this.state
     const postInfo = {userData}
     //http://localhost:3000
     //https://sitter-swap-api.herokuapp.com
-    fetch('https://sitter-swap-api.herokuapp.com/api/v1/users', {
+    fetch('http://localhost:3001/api/v1/users', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
@@ -47,34 +48,16 @@ class NewMemberForm extends Component {
       .then((response) => {
         return response.json()
     }).then((data) => {
-        let id = data.id
-        this.setStorage(data)
-        let historyString = "users/" + id + "/profile"
-        this.props.passToParent("true")
-        history.push(historyString)
+        history.push("/profile")
     }).catch((error) => {
       console.log(error)
     })
-  }
-
-  setStorage = (data) => {
-    let id = data.id
-    let name = data.username
-    let token = data.token
-    localStorage.setItem('loggedIn', "true")
-    localStorage.setItem('username', name)
-    localStorage.setItem('token', token)
-    localStorage.setItem('id', id)
   }
 
   render() {
     return(
       <section className="new-member-form">
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="username">Create Username: </label>
-            <input name="username" type="text" onChange={this.handleChange} required/>
-          <br></br>
-          <br></br>
           <fieldset className="private-info">
           <legend>This information will not be visible to other members</legend>
           <label htmlFor="firstName">First Name: </label>

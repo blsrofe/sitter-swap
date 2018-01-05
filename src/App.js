@@ -4,25 +4,17 @@ import {Router} from "react-router-dom"
 import NavBar from './components/NavBar'
 import ContentPanel from './components/ContentPanel'
 import history from './objects/history'
+import Auth from './objects/auth'
 
 class App extends Component {
-  constructor(){
-    super()
-    this.state = {
-      loggedIn: "false"
-    }
-  }
 
-  getLoggedStatus = (dataFromChild) => {
-    let status = localStorage.getItem('loggedIn')
-    this.setState({ loggedIn: status })
-  }
 
   render() {
+    const auth = new Auth()
     return (
       <Router history={history}>
         <div className="App">
-          <NavBar isLoggedIn={this.state.loggedIn} />
+          <NavBar auth={auth} />
           <ContentPanel passToParent={this.getLoggedStatus}/>
         </div>
       </Router>
