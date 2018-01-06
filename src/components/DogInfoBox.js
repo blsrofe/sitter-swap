@@ -24,9 +24,7 @@ class DogInfoBox extends Component {
 
   handleClick(event) {
     event.preventDefault()
-    let id = this.state.id
-    let historyString = "/users/" + id + "/new-dog"
-    history.push(historyString)
+    history.push("/new-dog")
   }
 
   editDog = (event) => {

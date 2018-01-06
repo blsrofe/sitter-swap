@@ -28,15 +28,12 @@ class ContentPanel extends Component {
         <div className="content-panel">
           <Route exact path="/" component={Home}/>
           <Route path="/home" component={Home}/>
-          <Route path="/new" render={()=><NewMemberForm passToParent={this.getLoggedStatus}/>}/>
           <Route path="/profile" render={(props) => <UserProfileBoxes auth={auth} {...props} />}/>
-          <Route path="/users/:id/new-dog" component={NewDogsForm}/>
-          <Route path="/dashboard" component={Dashboard}/>
-          <Route path="/login" render={()=><Login passToParent={this.getLoggedStatus}/>}/>
-          <Route path="/logout" render={()=><Logout passToParent={this.getLoggedStatus}/>}/>
-          <Route path="/users/:id/new-trip" component={NewTrip}/>
-          <Route path="/requests" component={SitterRequests}/>
-          <Route exact path="/users/:id" component={UsersShow}/>
+          <Route path="/new-dog" render={(props) => <NewDogsForm auth={auth} {...props} />}/>
+          <Route path="/dashboard" render={(props) => <Dashboard auth={auth} {...props} />}/>
+          <Route path="/new-trip" render={(props) => <NewTrip auth={auth} {...props} />}/>
+          <Route path="/requests" render={(props) => <SitterRequests auth={auth} {...props} />}/>
+          <Route path="/public/:id" render={(props) => <UsersShow auth={auth} {...props} />}/>
           <Route path="/callback" render={(props) => {
             handleAuthentication(props);
             return <Callback {...props} />
