@@ -30,6 +30,8 @@ class SitterRequests extends Component {
       <div>
         {
         isAuthenticated() &&
+          <div>
+          <h3 className="sitter-requests-link"><NavLink to={'/dashboard'}>Back To Dashboard</NavLink></h3>
           <article className="all-trips format-table">
           <h2>Sitter Requests</h2>
           <table>
@@ -51,6 +53,7 @@ class SitterRequests extends Component {
                 let start = tripObject.start_date.substring(0,10)
                 let end = tripObject.end_date.substring(0,10)
                 let requestShow = "/public/" + tripObject.user_id
+                let apply = "/apply/" + tripObject.id
                 return(<tr key={tripObject.id}>
                   <td>{tripObject.trip_name}</td>
                   <td>{tripObject.first_name}</td>
@@ -60,12 +63,13 @@ class SitterRequests extends Component {
                   <td>{tripObject.zip}</td>
                   <td>{tripObject.notes}</td>
                   <td><button><NavLink to={requestShow}>View</NavLink></button></td>
-                  <td><button>Apply</button></td>
+                  <td><button><NavLink to={apply}>Apply</NavLink></button></td>
               </tr>)
               })}
             </tbody>
           </table>
           </article>
+          </div>
         }
 
         {

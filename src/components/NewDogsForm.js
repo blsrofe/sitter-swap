@@ -12,16 +12,12 @@ class NewDogsForm extends Component {
       age: '',
       breed: '',
       notes: '',
-      owner_id: ''
+      owner_id: localStorage.getItem("user_id")
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
-  componentDidMount() {
-    // let id = Number(this.props.match.params.id)
-    let id = localStorage.getItem("user_id")
-    this.setState({"owner_id": id})
-  }
+
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value })
   }

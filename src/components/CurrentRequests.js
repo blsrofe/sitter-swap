@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import handleErrors from '../objects/handleErrors'
+import history from '../objects/history'
 
 class CurrentRequests extends Component {
   constructor(){
@@ -7,6 +8,12 @@ class CurrentRequests extends Component {
     this.state = {
       requestArray: []
     }
+  }
+
+  handleClick(event, tripId) {
+    event.preventDefault()
+    let historyString = "/responses/" + tripId
+    history.push(historyString)
   }
 
   componentDidMount() {
@@ -49,7 +56,7 @@ class CurrentRequests extends Component {
                             <td>{end}</td>
                             <td>{requestObject.num_nights}</td>
                             <td>{requestObject.notes}</td>
-                            <td><button>Responses</button></td>
+                            <td><button onClick={this.handleClick(requestObject.id)}>Responses</button></td>
                             <td><button>Update</button></td>
                             <td><button>Cancel</button></td>
                           </tr>

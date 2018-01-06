@@ -26,8 +26,7 @@ class PublicDogInfoBox extends Component {
       .then(handleErrors)
       .then(response => response.json())
       .then((data) => {
-        this.setState({ dogsArray: data
-        })
+        this.setState({ dogsArray: data})
     }).catch((error) => {
         console.log(error)
     })
