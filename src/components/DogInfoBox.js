@@ -9,7 +9,7 @@ class DogInfoBox extends Component {
   constructor(){
     super()
     this.state = {
-      owner_id: '',
+      id: localStorage.getItem("user_id"),
       name: '',
       breed: '',
       sex: '',
@@ -24,7 +24,7 @@ class DogInfoBox extends Component {
 
   handleClick(event) {
     event.preventDefault()
-    let id = localStorage.getItem("user_id")
+    let id = this.state.id
     let historyString = "/users/" + id + "/new-dog"
     history.push(historyString)
   }
@@ -57,7 +57,7 @@ class DogInfoBox extends Component {
 
   fetchDogs = () => {
     const API = 'https://sitter-swap-api.herokuapp.com/api/v1/users/'
-    let id = this.state.owner_id
+    let id = this.state.id
     const dogs = '/dogs'
     fetch(API + id + dogs)
       .then(handleErrors)
