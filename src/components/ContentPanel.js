@@ -10,33 +10,34 @@ import NewTrip from './NewTrip'
 import SitterRequests from './SitterRequests'
 import UsersShow from './UsersShow'
 import Logout from './Logout'
+import Callback from '../objects/callback'
+import Auth from '../objects/auth'
 
 class ContentPanel extends Component {
-  constructor(){
-    super()
-    this.state = {
-      loggedIn: false
-    }
-  }
 
-  getLoggedStatus = (dataFromChild) => {
-    let status = localStorage.getItem('loggedIn')
-    this.props.passToParent(status)
-  }
 
   render() {
+    const auth = new Auth()
+
+    const handleAuthentication = (nextState, replace) => {
+      if (/access_token|id_token|error/.test(nextState.location.hash)) {
+        auth.handleAuthentication();
+      }
+    }
     return(
         <div className="content-panel">
           <Route exact path="/" component={Home}/>
-          <Route path="/new" render={()=><NewMemberForm passToParent={this.getLoggedStatus}/>}/>
-          <Route path="/users/:id/profile" component={UserProfileBoxes}/>
-          <Route path="/users/:id/new-dog" component={NewDogsForm}/>
-          <Route path="/users/:id/dashboard" component={Dashboard}/>
-          <Route path="/login" render={()=><Login passToParent={this.getLoggedStatus}/>}/>
-          <Route path="/logout" render={()=><Logout passToParent={this.getLoggedStatus}/>}/>
-          <Route path="/users/:id/new-trip" component={NewTrip}/>
-          <Route path="/requests" component={SitterRequests}/>
-          <Route exact path="/users/:id" component={UsersShow}/>
+          <Route path="/home" component={Home}/>
+          <Route path="/profile" render={(props) => <UserProfileBoxes auth={auth} {...props} />}/>
+          <Route path="/new-dog" render={(props) => <NewDogsForm auth={auth} {...props} />}/>
+          <Route path="/dashboard" render={(props) => <Dashboard auth={auth} {...props} />}/>
+          <Route path="/new-trip" render={(props) => <NewTrip auth={auth} {...props} />}/>
+          <Route path="/requests" render={(props) => <SitterRequests auth={auth} {...props} />}/>
+          <Route path="/public/:id" render={(props) => <UsersShow auth={auth} {...props} />}/>
+          <Route path="/callback" render={(props) => {
+            handleAuthentication(props);
+            return <Callback {...props} />
+          }}/>
         </div>
     )
   }

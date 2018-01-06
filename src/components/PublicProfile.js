@@ -6,7 +6,7 @@ class PublicProfile extends Component {
   constructor(){
     super()
     this.state = {
-      username: '',
+      first_name: '',
       crossStreet1: '',
       crossStreet2: '',
       city: '',
@@ -23,12 +23,12 @@ class PublicProfile extends Component {
 
   componentDidMount() {
     const API = 'https://sitter-swap-api.herokuapp.com/api/v1/users-public/'
-    let id = this.props.id
+    let id = localStorage.getItem("user_id")
     fetch(API + id)
       .then(handleErrors)
       .then(response => response.json())
       .then((data) => {
-        this.setState({ username: data[0].username,
+        this.setState({ first_name: data[0].first_name,
                         crossStreet1: data[0].cross_street1,
                         crossStreet2: data[0].cross_street2,
                         city: data[0].city,
@@ -50,7 +50,7 @@ class PublicProfile extends Component {
     return(
       <article className="users-show">
         <div className="show-box">
-          <h2 className="header">{this.state.username}</h2>
+          <h2 className="header">{this.state.first_name}</h2>
           <p className="close"><span id="bold">City: </span>{this.state.city}</p>
           <p className="close"><span id="bold">Major Cross Streets: </span>{this.state.crossStreet1 + " and " + this.state.crossStreet2}</p>
           <p className="close"><span id="bold">Zip Code: </span>{this.state.zip}</p>

@@ -9,6 +9,7 @@ class DogInfoBox extends Component {
   constructor(){
     super()
     this.state = {
+      id: localStorage.getItem("user_id"),
       name: '',
       breed: '',
       sex: '',
@@ -23,9 +24,7 @@ class DogInfoBox extends Component {
 
   handleClick(event) {
     event.preventDefault()
-    let id = this.props.id
-    let historyString = "/users/" + id + "/new-dog"
-    history.push(historyString)
+    history.push("/new-dog")
   }
 
   editDog = (event) => {
@@ -56,7 +55,7 @@ class DogInfoBox extends Component {
 
   fetchDogs = () => {
     const API = 'https://sitter-swap-api.herokuapp.com/api/v1/users/'
-    let id = this.props.id
+    let id = this.state.id
     const dogs = '/dogs'
     fetch(API + id + dogs)
       .then(handleErrors)
@@ -70,38 +69,38 @@ class DogInfoBox extends Component {
   }
 
   render() {
-    return(
-      <article className="dog-info-box">
-        <h2>Your Dogs</h2>
-        <table>
-          <thead>
-            <tr>
-              <th style={{width:"80px"}}>Name</th>
-              <th style={{width:"40px"}}>Age</th>
-              <th style={{width:"100px"}}>Breed</th>
-              <th style={{width:"40px"}}>Sex</th>
-              <th style={{width:"130px"}}>Notes</th>
-              <th style={{width:"60px"}}></th>
-              <th style={{width:"60px"}}></th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.state.dogsArray.map((dogObject) => {
-                    return(<tr key={dogObject.id}>
-                            <td>{dogObject.name}</td>
-                            <td>{dogObject.age}</td>
-                            <td>{dogObject.breed}</td>
-                            <td>{dogObject.sex}</td>
-                            <td>{dogObject.notes}</td>
-                            <td><button onClick={this.editDog}>Edit</button></td>
-                            <td><button onClick={this.deleteDog.bind(this, dogObject.id)}>Delete</button></td>
-                          </tr>
-                    )
-                 })}
-          </tbody>
-        </table>
-        <button onClick={this.handleClick}>Add Dog</button>
-      </article>
+        return(
+            <article className="dog-info-box">
+              <h2>Your Dogs</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th style={{width:"80px"}}>Name</th>
+                    <th style={{width:"40px"}}>Age</th>
+                    <th style={{width:"100px"}}>Breed</th>
+                    <th style={{width:"40px"}}>Sex</th>
+                    <th style={{width:"130px"}}>Notes</th>
+                    <th style={{width:"60px"}}></th>
+                    <th style={{width:"60px"}}></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {this.state.dogsArray.map((dogObject) => {
+                          return(<tr key={dogObject.id}>
+                                  <td>{dogObject.name}</td>
+                                  <td>{dogObject.age}</td>
+                                  <td>{dogObject.breed}</td>
+                                  <td>{dogObject.sex}</td>
+                                  <td>{dogObject.notes}</td>
+                                  <td><button onClick={this.editDog}>Edit</button></td>
+                                  <td><button onClick={this.deleteDog.bind(this, dogObject.id)}>Delete</button></td>
+                                </tr>
+                          )
+                       })}
+                </tbody>
+              </table>
+              <button onClick={this.handleClick}>Add Dog</button>
+            </article>
     )
   }
 }

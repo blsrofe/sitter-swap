@@ -1,16 +1,25 @@
 import React, { Component } from 'react'
-import UserProfile from './UserProfile'
-import DogInfoBox from './DogInfoBox'
-import {NavLink} from "react-router-dom"
+import FourOFour from "./FourOFour"
+import UserAccountDecision from "./UserAccountDecision"
 
 class UserProfileBoxes extends Component {
   render() {
+    const { isAuthenticated } = this.props.auth
+
     return(
-      <section className="user-profile-box">
-        <UserProfile id={this.props.match.params.id}/>
-        <DogInfoBox id={this.props.match.params.id}/>
-        <h1><NavLink to={'/users/' + this.props.match.params.id + '/dashboard' }>Visit Your Dashboard</NavLink></h1>
-      </section>
+      <div>
+        {
+        isAuthenticated() &&
+          <section>
+            <UserAccountDecision />
+          </section>
+        }
+
+        {
+        !isAuthenticated() &&
+          <FourOFour />
+        }
+      </div>
     )
   }
 }

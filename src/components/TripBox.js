@@ -41,13 +41,13 @@ class TripBox extends Component {
   render() {
     let tripboxContent
     if(this.state.contentToShow === "active") {
-      tripboxContent = <CurrentRequests id={this.props.id}/>
+      tripboxContent = <CurrentRequests />
     }else if(this.state.contentToShow === "cancelled") {
-      tripboxContent = <CancelledRequests id={this.props.id}/>
+      tripboxContent = <CancelledRequests />
     }else if(this.state.contentToShow === "completed") {
-      tripboxContent = <CompletedRequests id={this.props.id}/>
+      tripboxContent = <CompletedRequests />
     }else if(this.state.contentToShow === "accepted") {
-      tripboxContent = <AcceptedRequests id={this.props.id}/>
+      tripboxContent = <AcceptedRequests />
     }
     return(
       <article className="tripbox">

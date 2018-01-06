@@ -10,8 +10,10 @@ class CurrentRequests extends Component {
   }
 
   componentDidMount() {
+    //http://localhost:3000
+    //https://sitter-swap-api.herokuapp.com
     const API = 'https://sitter-swap-api.herokuapp.com/api/v1/users/'
-    let id = this.props.id
+    let id = localStorage.getItem("user_id")
     const requests = '/requests'
     fetch(API + id + requests)
       .then(handleErrors)

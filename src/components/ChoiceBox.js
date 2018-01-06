@@ -3,8 +3,8 @@ import {NavLink} from "react-router-dom"
 
 class ChoiceBox extends Component {
   render() {
-    const profileLink = '/users/' + this.props.id + '/profile'
-    const requestLink = '/users/' + this.props.id + '/new-trip'
+    const profileLink = '/profile'
+    const requestLink = '/new-trip'
     return(
       <article className="choicebox">
         <h3><NavLink to={profileLink}>View/Edit Profile</NavLink></h3>

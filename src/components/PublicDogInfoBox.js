@@ -16,19 +16,11 @@ class PublicDogInfoBox extends Component {
       notes: '',
       dogsArray: []
     }
-    this.handleClick = this.handleClick.bind(this)
-  }
-
-  handleClick(event) {
-    event.preventDefault()
-    let id = this.props.id
-    let historyString = "/users/" + id + "/new-dog"
-    history.push(historyString, { owner_id: 12 })
   }
 
   componentDidMount() {
     const API = 'https://sitter-swap-api.herokuapp.com/api/v1/users/'
-    let id = this.props.id
+    let id = localStorage.getItem("user_id")
     const dogs = '/dogs'
     fetch(API + id + dogs)
       .then(handleErrors)
