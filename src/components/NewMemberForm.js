@@ -45,6 +45,7 @@ class NewMemberForm extends Component {
       .then((response) => {
         return response.json()
     }).then((data) => {
+        localStorage.setItem("user_id", data.id)
         history.push("/profile")
     }).catch((error) => {
       console.log(error)

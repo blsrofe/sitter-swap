@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import UserProfile from './UserProfile'
-import DogInfoBox from './DogInfoBox'
-import {NavLink} from "react-router-dom"
 import FourOFour from "./FourOFour"
+import UserAccountDecision from "./UserAccountDecision"
 
 class UserProfileBoxes extends Component {
   render() {
@@ -12,16 +10,14 @@ class UserProfileBoxes extends Component {
       <div>
         {
         isAuthenticated() &&
-        <section className="user-profile-box">
-          <UserProfile />
-          <DogInfoBox />
-          <h1><NavLink to={'/dashboard'}>Visit Your Dashboard</NavLink></h1>
-        </section>
+          <section>
+            <UserAccountDecision />
+          </section>
         }
 
         {
         !isAuthenticated() &&
-        <FourOFour />
+          <FourOFour />
         }
       </div>
     )

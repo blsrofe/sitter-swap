@@ -7,7 +7,7 @@ class UserProfile extends Component {
   constructor(){
     super()
     this.state = {
-      id: '',
+      id: localStorage.getItem("user_id"),
       firstName: '',
       lastName: '',
       crossStreet1: '',
@@ -27,34 +27,12 @@ class UserProfile extends Component {
     }
   }
 
-  componentWillMount() {
-    let email = localStorage.getItem("email")
-    fetch('https://sitter-swap-api.herokuapp.com/api/v1/account', {
-      method: 'get',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': email
-      }
-    }).then(handleErrors)
-      .then((response) => {
-        return response.json()
-    }).then((data) => {
-        this.setState({id: data.id})
-        localStorage.setItem("user_id", data.id)
-    }).catch((error) => {
-      console.log(error)
-    })
-  }
-
-
   componentDidMount() {
     //http://localhost:3000
     //https://sitter-swap-api.herokuapp.com
     const API = 'https://sitter-swap-api.herokuapp.com/api/v1/users/'
-    let id = localStorage.getItem("user_id")
-    console.log(id)
-
-    fetch(API + id, {
+    let userId = localStorage.getItem("user_id")
+    fetch(API + userId, {
       method: 'get',
       headers: {
         'Content-Type': 'application/json'
@@ -62,8 +40,7 @@ class UserProfile extends Component {
     }).then(handleErrors)
       .then(response => response.json())
       .then((data) => {
-        this.setState({ id: data.id,
-                        firstName: data.first_name,
+        this.setState({ firstName: data.first_name,
                         lastName: data.last_name,
                         crossStreet1: data.cross_street1,
                         crossStreet2: data.cross_street2,
@@ -85,12 +62,9 @@ class UserProfile extends Component {
   }
 
   render() {
-    let box
-    if (this.state.id === "no") {
-      box = (<NewMemberForm />)
-    } else {
-      box = (<article className="user-profile">
-              <h2>Information About {this.state.username}</h2>
+    return(
+          <article className="user-profile">
+            <h2>Information About {this.state.username}</h2>
               <div className="personal-info">
                 <p className="close">{this.state.firstName + " " + this.state.lastName}</p>
                 <p className="close">{this.state.street}</p>
@@ -113,9 +87,7 @@ class UserProfile extends Component {
                 <p>{this.state.profile}</p>
               </div>
             </article>
-          )
-    }
-    return(box)
+    )
   }
 }
 

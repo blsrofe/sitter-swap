@@ -22,24 +22,6 @@ class DogInfoBox extends Component {
     this.editDog = this.editDog.bind(this)
   }
 
-  componentWillMount() {
-    let email = localStorage.getItem("email")
-    fetch('https://sitter-swap-api.herokuapp.com/api/v1/account', {
-      method: 'get',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': email
-      }
-    }).then(handleErrors)
-      .then((response) => {
-        return response.json()
-    }).then((data) => {
-        this.setState({owner_id: data.id})
-    }).catch((error) => {
-      console.log(error)
-    })
-  }
-
   handleClick(event) {
     event.preventDefault()
     let id = localStorage.getItem("user_id")
@@ -89,13 +71,8 @@ class DogInfoBox extends Component {
   }
 
   render() {
-    let box
-    if (this.state.owner_id === "no") {
-      box = (<article className="dog-info-box">
-              <h2> Create a profile to enter dog information</h2>
-            </article>)
-    } else {
-      box = (<article className="dog-info-box">
+        return(
+            <article className="dog-info-box">
               <h2>Your Dogs</h2>
               <table>
                 <thead>
@@ -125,8 +102,8 @@ class DogInfoBox extends Component {
                 </tbody>
               </table>
               <button onClick={this.handleClick}>Add Dog</button>
-            </article>)}
-    return(box)
+            </article>
+    )
   }
 }
 
