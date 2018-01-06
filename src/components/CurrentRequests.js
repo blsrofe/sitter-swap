@@ -56,7 +56,8 @@ class CurrentRequests extends Component {
                             <td>{end}</td>
                             <td>{requestObject.num_nights}</td>
                             <td>{requestObject.notes}</td>
-                            <td><button onClick={this.handleClick(requestObject.id)}>Responses</button></td>
+                            <td><button onClick={(e) => this.handleClick(e, requestObject.id)}>Responses</button></td>
+
                             <td><button>Update</button></td>
                             <td><button>Cancel</button></td>
                           </tr>
