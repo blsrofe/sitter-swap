@@ -12,9 +12,8 @@ class UserProfile extends Component {
       lastName: '',
       crossStreet1: '',
       crossStreet2: '',
-      email: '',
+      email: localStorage.getItem("email"),
       phoneNumber: '',
-      password: '',
       street: '',
       city: '',
       state: '',
@@ -29,18 +28,19 @@ class UserProfile extends Component {
   }
 
   componentWillMount() {
-    let idToken = localStorage.getItem("id_token")
+    let email = localStorage.getItem("email")
     fetch('https://sitter-swap-api.herokuapp.com/api/v1/account', {
       method: 'get',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': idToken
+        'Authorization': email
       }
     }).then(handleErrors)
       .then((response) => {
         return response.json()
     }).then((data) => {
         this.setState({id: data.id})
+        localStorage.setItem("user_id", data.id)
     }).catch((error) => {
       console.log(error)
     })
@@ -50,8 +50,9 @@ class UserProfile extends Component {
   componentDidMount() {
     //http://localhost:3000
     //https://sitter-swap-api.herokuapp.com
-    const API = 'http://localhost:3000/api/v1/users/'
-    let id = this.state.id
+    const API = 'https://sitter-swap-api.herokuapp.com/api/v1/users/'
+    let id = localStorage.getItem("user_id")
+    console.log(id)
 
     fetch(API + id, {
       method: 'get',
@@ -66,7 +67,6 @@ class UserProfile extends Component {
                         lastName: data.last_name,
                         crossStreet1: data.cross_street1,
                         crossStreet2: data.cross_street2,
-                        email: data.email,
                         phoneNumber: data.phone_number,
                         street: data.street,
                         city: data.city,

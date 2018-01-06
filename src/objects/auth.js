@@ -9,7 +9,7 @@ export default class Auth {
     redirectUri: process.env.NODE_ENV === 'development' ? 'http://localhost:3000/callback' : 'https://sitterswap.herokuapp.com/callback',
     audience: 'https://sitter-swap.auth0.com/userinfo',
     responseType: 'token id_token',
-    scope: 'openid'
+    scope: 'openid profile'
   });
 
   login = () => {
@@ -34,7 +34,7 @@ export default class Auth {
     let expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
     localStorage.setItem('access_token', authResult.accessToken);
     localStorage.setItem('id_token', authResult.idToken);
-    localStorage.setItem('username', authResult.username)
+    localStorage.setItem('email', authResult.idTokenPayload.name)
     localStorage.setItem('expires_at', expiresAt);
     // navigate to the home route
     history.replace('/home');
@@ -45,6 +45,8 @@ export default class Auth {
     // Clear access token and ID token from local storage
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
+    localStorage.removeItem('email')
+    localStorage.removeItem('owner_id')
     localStorage.removeItem('expires_at');
     // navigate to the home route
     history.replace('/home');

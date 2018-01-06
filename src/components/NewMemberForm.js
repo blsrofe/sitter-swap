@@ -10,7 +10,7 @@ class NewMemberForm extends Component {
       lastName: '',
       crossStreet1: '',
       crossStreet2: '',
-      email: '',
+      email: localStorage.getItem("email"),
       phoneNumber: '',
       street: '',
       city: '',
@@ -22,7 +22,6 @@ class NewMemberForm extends Component {
       otherChildren: '',
       cats: '',
       profile: '',
-      token: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -32,13 +31,11 @@ class NewMemberForm extends Component {
   }
   handleSubmit(event) {
     event.preventDefault()
-    let idToken = localStorage.getItem("id_token")
-    this.setState({ token: idToken })
     const userData = this.state
     const postInfo = {userData}
     //http://localhost:3000
     //https://sitter-swap-api.herokuapp.com
-    fetch('http://localhost:3001/api/v1/users', {
+    fetch('https://sitter-swap-api.herokuapp.com/api/v1/users', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
@@ -125,13 +122,8 @@ class NewMemberForm extends Component {
             <option value="WY">Wyoming</option>
           </select>
           <br></br>
-          <label htmlFor="email">Email: </label>
-            <input name="email" type="email" onChange={this.handleChange} required/>
           <label htmlFor="phoneNumber">Phone: </label>
             <input name="phoneNumber" type="text" onChange={this.handleChange} required/>
-          <br></br>
-          <label htmlFor="password">Password: </label>
-            <input name="password" type="password" onChange={this.handleChange} required/>
           <br></br>
           </fieldset>
           <br></br>

@@ -18,7 +18,7 @@ class NewDogsForm extends Component {
   }
   componentDidMount() {
     let id = Number(this.props.match.params.id)
-    this.setState({["owner_id"]: id})
+    this.setState({"owner_id": id})
   }
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value })
@@ -39,9 +39,7 @@ class NewDogsForm extends Component {
       .then((response) => {
         return response.json()
     }).then((data) => {
-        let id = data.owner_id
-        let historyString = "/users/" + id + "/profile"
-        history.push(historyString)
+        history.push("/profile")
     }).catch((error) => {
       console.log(error)
     })
