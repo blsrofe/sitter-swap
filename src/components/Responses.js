@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 import FourOFour from "./FourOFour"
 import handleErrors from '../objects/handleErrors'
 import {NavLink} from "react-router-dom"
+import history from '../objects/history'
+
 
 class Responses extends Component {
   constructor(){
     super()
     this.state = {
-      id: '',
       responseArray: []
     }
     this.viewProfile = this.viewProfile.bind(this)
@@ -19,8 +20,45 @@ class Responses extends Component {
 
   }
 
-  accept = (firstName, event) => {
+  accept = (senderId, event) => {
     event.preventDefault()
+    let API = 'https://sitter-swap-api.herokuapp.com/api/v1/trips/'
+    let id = this.props.match.params.id
+    let postInfo = {status: "accepted", accepter_id: senderId}
+    fetch(API + id, {
+      method: 'put',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(postInfo)
+    }).then(handleErrors)
+      .then((response) => {
+        return response.json()
+    }).then((data) => {
+        this.notifySender(senderId)
+    }).catch((error) => {
+      console.log(error)
+    })
+  }
+
+  notifySender = (senderId) => {
+    let id = Number(this.props.match.params.id)
+    let messageText = "Your trip application has been accepted."
+    let postInfo = {messageData: {tripId: id, message: messageText, recipientId: senderId, senderId: Number(localStorage.getItem("user_id")), responseToRequest: "false"}}
+    fetch('https://sitter-swap-api.herokuapp.com/api/v1/messages', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(postInfo)
+    }).then(handleErrors)
+      .then((response) => {
+        return response.json()
+    }).then((data) => {
+        history.push("/dashboard")
+    }).catch((error) => {
+      console.log(error)
+    })
   }
 
   componentDidMount() {
@@ -52,7 +90,7 @@ class Responses extends Component {
               <thead>
                 <tr>
                   <th style={{width:"80px"}}>Name</th>
-                  <th style={{width:"130px"}}>Message</th>
+                  <th style={{width:"800px"}}>Message</th>
                 </tr>
               </thead>
               <tbody>
@@ -60,8 +98,8 @@ class Responses extends Component {
                         return(<tr key={responseObject.id}>
                                 <td>{responseObject.first_name}</td>
                                 <td>{responseObject.message}</td>
-                                <td><button onClick={this.viewProfile}>View User</button></td>
-                                <td><button onClick={this.accept.bind(this, responseObject.first_name)}>Accept</button></td>//want id of accepted user
+                                <td><button onClick={this.viewProfile}>Profile</button></td>
+                                <td><button onClick={this.accept.bind(this, responseObject.sender_id)}>Accept</button></td>
                               </tr>
                         )
                      })}

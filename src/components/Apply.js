@@ -10,6 +10,7 @@ class Apply extends Component {
       tripId: '',
       message: '',
       recipientId: '',
+      responseToRequest: "true",
       senderId: Number(localStorage.getItem("user_id"))
     }
     this.handleChange = this.handleChange.bind(this)
