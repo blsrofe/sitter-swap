@@ -13,9 +13,9 @@ import Logout from './Logout'
 import Callback from '../objects/callback'
 import Auth from '../objects/auth'
 import Apply from './Apply'
+import Responses from './Responses'
 
 class ContentPanel extends Component {
-
 
   render() {
     const auth = new Auth()
@@ -36,6 +36,7 @@ class ContentPanel extends Component {
           <Route path="/requests" render={(props) => <SitterRequests auth={auth} {...props} />}/>
           <Route path="/public/:id" render={(props) => <UsersShow auth={auth} {...props} />}/>
           <Route path="/apply/:id" render={(props) => <Apply auth={auth} {...props} />}/>
+          <Route path="/responses/:id" render={(props) => <Responses auth={auth} {...props} />}/>
           <Route path="/callback" render={(props) => {
             handleAuthentication(props);
             return <Callback {...props} />

@@ -15,6 +15,8 @@ class UserAccountDecision extends Component {
 
   componentWillMount() {
     let email = localStorage.getItem("email")
+    //http://localhost:3000
+    //https://sitter-swap-api.herokuapp.com/api/v1/dogs
     fetch('https://sitter-swap-api.herokuapp.com/api/v1/account', {
       method: 'get',
       headers: {
