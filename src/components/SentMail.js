@@ -29,10 +29,10 @@ class SentMail extends Component {
         <table>
           <thead>
             <tr>
-              <th style={{width:"110px"}}>Date </th>
+              <th style={{width:"100px"}}>Date </th>
               <th style={{width:"100px"}}>To</th>
               <th style={{width:"150px"}}>Subject</th>
-              <th style={{width:"200px"}}>Message</th>
+              <th style={{width:"450px"}}>Message</th>
             </tr>
           </thead>
           <tbody>

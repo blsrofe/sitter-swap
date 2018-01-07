@@ -66,7 +66,7 @@ class Apply extends Component {
           <h2> Send a Message to the Sitter Requester</h2>
           <form onSubmit={this.handleSubmit}>
             <textarea cols="80" rows="8" name="message" wrap="virtual" onChange={this.handleChange}>
-              Your message
+              Do not forget to provide a way for the sitter requester to contact you.
             </textarea>
             <br></br>
             <br></br>

@@ -43,7 +43,7 @@ class Responses extends Component {
 
   notifySender = (senderId) => {
     let id = Number(this.props.match.params.id)
-    let messageText = "Your trip application has been accepted."
+    let messageText = "Congratulations! You have been accepted to dog sit for this trip!."
     let postInfo = {messageData: {tripId: id, message: messageText, recipientId: senderId, senderId: Number(localStorage.getItem("user_id")), responseToRequest: "false"}}
     fetch('https://sitter-swap-api.herokuapp.com/api/v1/messages', {
       method: 'post',
