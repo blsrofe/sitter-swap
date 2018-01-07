@@ -2,7 +2,7 @@
 
 This is a capstone project for the Turing School of Software and Design Backend Program. The goal of the project was to learn a new language.
 
-Sitter Swap is tool to bring dog owners together to help reduce the cost of pet sitting and boarding. After creating an account, make requests for other users to watch their dogs while they are on vacation. Users can also apply to a request to dog sit for another user. Users have access to a profile page to add information about their dogs and a dashboard to view the status of trip requests and view messages from other users.
+Sitter Swap is tool to bring dog owners together to help reduce the cost of pet sitting and boarding. After creating an account, user can make requests for other users to watch their dogs while they are on vacation. Users can also apply to a request to dog sit for another user. Users have access to a profile page to add information about their dogs and a dashboard to view the status of trip requests and view messages from other users.
 
 This is the frontend for the project. The backend repo can be found at https://github.com/blsrofe/sitter-swap-api
 
