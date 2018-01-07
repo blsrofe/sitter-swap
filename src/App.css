@@ -438,7 +438,7 @@ nav ul li a:hover {
   border-radius: 6px;
   margin-top: -2px;
   height: 50px;
-  width: 425px;
+  width: 515px;
 }
 
 ul.tripbox-header li h3:hover{
@@ -557,4 +557,37 @@ ul.tripbox-header li h3{
 
 .response a:hover{
   color: #7ea8be;
+}
+
+.accepted-requests button {
+  background-color: #3a606e;
+  border-radius: 10px;
+  color: white;
+  font-size: 12px;
+  box-shadow: 5px 5px 10px black;
+}
+
+ul.mailbox-header li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+  padding: 12px;
+  margin-bottom: 20px;
+}
+
+ul.mailbox-header {
+ background-color: #3a606e;
+ padding: 0;
+ border-radius: 6px;
+ margin-top: -2px;
+ height: 50px;
+ width: 190px;
+}
+
+ul.mailbox-header li h3:hover{
+ color: #c2948a;
+}
+
+ul.mailbox-header li h3{
+ display: inline-block;
 }
