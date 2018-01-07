@@ -3,6 +3,7 @@ import CurrentRequests from './CurrentRequests'
 import CompletedRequests from './CompletedRequests'
 import CancelledRequests from './CancelledRequests'
 import AcceptedRequests from './AcceptedRequests'
+import Visitors from './Visitors'
 import {NavLink} from "react-router-dom"
 import {Route} from "react-router-dom"
 
@@ -16,6 +17,7 @@ class TripBox extends Component {
     this.setCancelled = this.setCancelled.bind(this)
     this.setCompleted = this.setCompleted.bind(this)
     this.setAccepted = this.setAccepted.bind(this)
+    this.setVisitors = this.setVisitors.bind(this)
   }
 
   setActive = (event) => {
@@ -38,6 +40,11 @@ class TripBox extends Component {
     this.setState({ contentToShow: "accepted" })
   }
 
+  setVisitors = (event) => {
+    event.preventDefault()
+    this.setState({ contentToShow: "visitors" })
+  }
+
   render() {
     let tripboxContent
     if(this.state.contentToShow === "active") {
@@ -48,6 +55,8 @@ class TripBox extends Component {
       tripboxContent = <CompletedRequests />
     }else if(this.state.contentToShow === "accepted") {
       tripboxContent = <AcceptedRequests />
+    }else if(this.state.contentToShow === "visitors") {
+      tripboxContent = <Visitors />
     }
     return(
       <article className="tripbox">
@@ -56,6 +65,7 @@ class TripBox extends Component {
           <li><h3 onClick={this.setCancelled}>Cancelled</h3></li>
           <li><h3 onClick={this.setCompleted}>Completed</h3></li>
           <li><h3 onClick={this.setAccepted}>Accepted</h3></li>
+          <li><h3 onClick={this.setVisitors}>Visitors</h3></li>
         </ul>
         <div className="tripbox-content">
           {tripboxContent}

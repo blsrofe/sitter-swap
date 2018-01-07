@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import handleErrors from '../objects/handleErrors'
 
-class AcceptedRequests extends Component {
+class Visitors extends Component {
   constructor(){
     super()
     this.state = {
@@ -12,7 +12,7 @@ class AcceptedRequests extends Component {
   componentDidMount() {
     const API = 'https://sitter-swap-api.herokuapp.com/api/v1/users/'
     let id = localStorage.getItem("user_id")
-    const requests = '/accepted'
+    const requests = '/visitors'
     fetch(API + id + requests)
       .then(handleErrors)
       .then(response => response.json())
@@ -58,4 +58,4 @@ class AcceptedRequests extends Component {
   }
 }
 
-export default AcceptedRequests
+export default Visitors
