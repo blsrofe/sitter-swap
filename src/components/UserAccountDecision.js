@@ -3,7 +3,6 @@ import handleErrors from '../objects/handleErrors'
 import NewMemberForm from "./NewMemberForm"
 import UserProfile from './UserProfile'
 import DogInfoBox from './DogInfoBox'
-import {NavLink} from "react-router-dom"
 
 class UserAccountDecision extends Component {
   constructor(){
@@ -29,6 +28,7 @@ class UserAccountDecision extends Component {
     }).then((data) => {
         this.setState({id: data.id})
         localStorage.setItem("user_id", data.id)
+        localStorage.setItem("paws", data.paws)
     }).catch((error) => {
       console.log(error)
     })
@@ -42,7 +42,6 @@ class UserAccountDecision extends Component {
       box = (<section className="user-profile-box">
               <UserProfile />
               <DogInfoBox />
-              <h1><NavLink to={'/dashboard'}>Visit Your Dashboard</NavLink></h1>
             </section>)
     }
     return(box)

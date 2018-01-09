@@ -1,4 +1,3 @@
-import React, { Component } from 'react'
 
 const handleErrors = (response) => {
   if(!response.ok) {

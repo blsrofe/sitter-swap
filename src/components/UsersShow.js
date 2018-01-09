@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import {NavLink} from "react-router-dom"
-import handleErrors from '../objects/handleErrors'
 import PublicProfile from './PublicProfile'
-import DogInfoBox from './DogInfoBox'
 import PublicDogInfoBox from './PublicDogInfoBox'
 import FourOFour from "./FourOFour"
 

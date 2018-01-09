@@ -4,20 +4,27 @@ import {NavLink} from "react-router-dom"
 class NavBar extends Component {
   constructor(props) {
     super(props)
-    this.state = {username: ""}
+    this.state = {username: "",
+                  paws: ""}
   }
 
   login = () => {
-   this.props.auth.login();
- }
- // calls the logout method in authentication service
- logout = () => {
-   this.props.auth.logout();
- }
+    this.props.auth.login();
+  }
+  // calls the logout method in authentication service
+  logout = () => {
+    this.props.auth.logout();
+  }
+
+  componentDidMount() {
+    const getPaws = localStorage.getItem("paws")
+    this.setState({ paws: getPaws})
+  }
 
 
   render() {
     const { isAuthenticated } = this.props.auth
+    let paws = this.state.paws
     return (
       <div>
       {
@@ -28,7 +35,8 @@ class NavBar extends Component {
   	      <li><NavLink to="/" id="title">Sitter Swap</NavLink></li>
         </ul>
         <ul id="right-nav">
-          <li><NavLink to="/">Welcome to SitterSwap!</NavLink></li>
+          <li><a href=""><img src={require('../images/white_paw_2.png')} id="paw" alt="pawprint" /> {paws}</a></li>
+          <li><NavLink to="/dashboard">Dashboard</NavLink></li>
           <li><a onClick={this.logout}>Logout</a></li>
         </ul>
       </nav>

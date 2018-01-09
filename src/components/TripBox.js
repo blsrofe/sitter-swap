@@ -4,8 +4,6 @@ import CompletedRequests from './CompletedRequests'
 import CancelledRequests from './CancelledRequests'
 import AcceptedRequests from './AcceptedRequests'
 import Visitors from './Visitors'
-import {NavLink} from "react-router-dom"
-import {Route} from "react-router-dom"
 
 class TripBox extends Component {
   constructor(){

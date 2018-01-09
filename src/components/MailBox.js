@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import SentMail from './SentMail'
 import ReceivedMail from './ReceivedMail'
-import {NavLink} from "react-router-dom"
-import {Route} from "react-router-dom"
 
 class MailBox extends Component {
   constructor(){

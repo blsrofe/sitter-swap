@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import history from '../objects/history'
 import handleErrors from '../objects/handleErrors'
 import {NavLink} from "react-router-dom"
 import FourOFour from "./FourOFour"
@@ -31,7 +30,6 @@ class SitterRequests extends Component {
         {
         isAuthenticated() &&
           <div>
-          <h3 className="sitter-requests-link"><NavLink to={'/dashboard'}>Back To Dashboard</NavLink></h3>
           <article className="all-trips format-table">
           <h2>Sitter Requests</h2>
           <table>

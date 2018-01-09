@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import history from '../objects/history'
 import handleErrors from '../objects/handleErrors'
 
 class PublicDogInfoBox extends Component {

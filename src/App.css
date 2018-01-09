@@ -48,6 +48,19 @@ nav ul li a:hover {
 	color: #c2948a;
 }
 
+nav ul li h4 {
+	text-decoration: none;
+	padding: 1em;
+	color: #fff;
+  font-size: 1.25em;
+  text-shadow: 3px 3px 8px #c2948a;
+}
+
+#paw {
+  height: 40px;
+  width: 40px;
+}
+
 .content-panel {
   width: 1200px;
   height: 700px;
@@ -143,7 +156,7 @@ nav ul li a:hover {
 }
 
 .new-member-form {
-  height: 655px;
+  height: 600px;
   width: 550px;
   margin-left: 300px;
   margin-top: 10px;

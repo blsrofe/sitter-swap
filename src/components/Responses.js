@@ -68,8 +68,7 @@ class Responses extends Component {
       .then(handleErrors)
       .then(response => response.json())
       .then((data) => {
-        this.setState({ responseArray: data
-        })
+        this.setState({ responseArray: data})
     }).catch((error) => {
         console.log(error)
     })

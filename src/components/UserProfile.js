@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import handleErrors from '../objects/handleErrors'
-import NewMemberForm from "./NewMemberForm"
 
 class UserProfile extends Component {
 
