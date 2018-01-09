@@ -17,8 +17,6 @@ class CurrentRequests extends Component {
   }
 
   componentDidMount() {
-    //http://localhost:3000
-    //https://sitter-swap-api.herokuapp.com
     const API = 'https://sitter-swap-api.herokuapp.com/api/v1/users/'
     let id = localStorage.getItem("user_id")
     const requests = '/requests'

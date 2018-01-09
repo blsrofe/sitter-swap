@@ -11,8 +11,8 @@ class CompletedRequests extends Component {
 
   componentDidMount() {
     const API = 'https://sitter-swap-api.herokuapp.com/api/v1/users/'
-    let id = this.props.id
-    const requests = '/requests/completed'
+    let id = localStorage.getItem("user_id")
+    const requests = '/completed'
     fetch(API + id + requests)
       .then(handleErrors)
       .then(response => response.json())
@@ -34,14 +34,14 @@ class CompletedRequests extends Component {
               <th style={{width:"100px"}}>Start Date</th>
               <th style={{width:"100px"}}>End Date</th>
               <th style={{width:"60px"}}>Nights</th>
-              <th style={{width:"170px"}}>Notes</th>
+              <th style={{width:"400px"}}>Notes</th>
             </tr>
           </thead>
           <tbody>
-            {this.state.requestArray.map((requestObject) => {//need to add unique keys to this array
+            {this.state.requestArray.map((requestObject) => {
               let start = requestObject.start_date.substring(0,10)
               let end = requestObject.end_date.substring(0,10)
-                    return(<tr>
+                    return(<tr key={requestObject.id}>
                             <td>{requestObject.trip_name}</td>
                             <td>{start}</td>
                             <td>{end}</td>

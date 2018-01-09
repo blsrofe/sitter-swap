@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import handleErrors from '../objects/handleErrors'
+import history from '../objects/history'
 
 class AcceptedRequests extends Component {
   constructor(){
@@ -21,6 +22,78 @@ class AcceptedRequests extends Component {
         })
     }).catch((error) => {
         console.log(error)
+    })
+  }
+
+  handleComplete(event, tripId, accepterId, numNights, accepterPaws) {
+    event.preventDefault()
+    this.changeStatus(tripId, accepterId, numNights, accepterPaws)
+  }
+
+  changeStatus = (tripId, accepterId, numNights, accepterPaws) => {
+    let requesterId = localStorage.getItem("user_id")
+    let API = 'https://sitter-swap-api.herokuapp.com/api/v1/trips/'
+    let postInfo = {status: "completed", accepter_id: accepterId}
+    fetch(API + tripId, {
+      method: 'put',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(postInfo)
+    }).then(handleErrors)
+      .then((response) => {
+        return response.json()
+    }).then((data) => {
+        this.updateRequesterPaws(requesterId, numNights, accepterId, accepterPaws)
+    }).catch((error) => {
+      console.log(error)
+    })
+  }
+
+  updateRequesterPaws = (requesterId, numNights, accepterId, accepterPaws) => {
+    let paws = localStorage.getItem("paws")
+    let updatedPaws = String(paws - numNights)
+    console.log(updatedPaws)
+    let API = 'https://sitter-swap-api.herokuapp.com/api/v1/users/'
+    let postInfo = {paws: updatedPaws}
+    let pawString = "/paws"
+    fetch(API + requesterId + pawString, {
+      method: 'put',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(postInfo)
+    }).then(handleErrors)
+      .then((response) => {
+        return response.json()
+    }).then((data) => {
+      console.log(data)
+        localStorage.setItem("paws", data.paws)
+        this.addAccepterPaws(accepterId, numNights, accepterPaws)
+    }).catch((error) => {
+      console.log(error)
+    })
+  }
+
+  addAccepterPaws = (accepterId, numNights, accepterPaws) => {
+    let numPaws = Number(accepterPaws)
+    let updatedPaws = String(numPaws + numNights)
+    let pawString = "/paws"
+    let API = 'https://sitter-swap-api.herokuapp.com/api/v1/users/'
+    let postInfo = {paws: updatedPaws}
+    fetch(API + accepterId + pawString, {
+      method: 'put',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(postInfo)
+    }).then(handleErrors)
+      .then((response) => {
+        return response.json()
+    }).then((data) => {
+      history.push("/dashboard")
+    }).catch((error) => {
+      console.log(error)
     })
   }
 
@@ -48,6 +121,7 @@ class AcceptedRequests extends Component {
                             <td>{requestObject.num_nights}</td>
                             <td>{requestObject.notes}</td>
                             <td><button>Cancel</button></td>
+                            <td><button onClick={(e) => this.handleComplete(e, requestObject.id, requestObject.accepter_id, requestObject.num_nights, requestObject.paws)}>Completed</button></td>
                           </tr>
                     )
                  })}
