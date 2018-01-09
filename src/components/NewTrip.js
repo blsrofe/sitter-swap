@@ -26,22 +26,26 @@ class NewTrip extends Component {
     event.preventDefault()
     const tripData = this.state
     const postInfo = {tripData}
-    //http://localhost:3000
-    //https://sitter-swap-api.herokuapp.com/api/v1/dogs
-    fetch('https://sitter-swap-api.herokuapp.com/api/v1/trips', {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(postInfo)
-    }).then(handleErrors)
-      .then((response) => {
-        return response.json()
-    }).then((data) => {
-        history.push("/dashboard")
-    }).catch((error) => {
-      console.log(error)
-    })
+    const nights = this.state.numNights
+    const paws = localStorage.getItem("paws")
+    if(nights > paws) {
+      alert("You do not have enough paws to make this request.")
+    } else {
+      fetch('https://sitter-swap-api.herokuapp.com/api/v1/trips', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(postInfo)
+      }).then(handleErrors)
+        .then((response) => {
+          return response.json()
+      }).then((data) => {
+          history.push("/dashboard")
+      }).catch((error) => {
+        console.log(error)
+      })
+    }
   }
 
   render() {
