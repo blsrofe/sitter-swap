@@ -26,11 +26,9 @@ class UserProfile extends Component {
     }
   }
 
-  componentDidMount() {
-    //http://localhost:3000
-    //https://sitter-swap-api.herokuapp.com
+  componentWillReceiveProps(nextProps) {
     const API = 'https://sitter-swap-api.herokuapp.com/api/v1/users/'
-    let userId = localStorage.getItem("user_id")
+    let userId = nextProps.id
     fetch(API + userId, {
       method: 'get',
       headers: {
@@ -59,6 +57,7 @@ class UserProfile extends Component {
         console.log(error)
     })
   }
+
 
   render() {
     return(

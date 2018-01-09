@@ -8,7 +8,8 @@ class UserAccountDecision extends Component {
   constructor(){
     super()
     this.state = {
-      id: ''
+      id: '',
+      paws: ''
     }
   }
 
@@ -26,7 +27,7 @@ class UserAccountDecision extends Component {
       .then((response) => {
         return response.json()
     }).then((data) => {
-        this.setState({id: data.id})
+        this.setState({id: data.id, paws: data.paws})
         localStorage.setItem("user_id", data.id)
         localStorage.setItem("paws", data.paws)
     }).catch((error) => {
@@ -35,13 +36,16 @@ class UserAccountDecision extends Component {
   }
 
   render() {
+    let passPaws = this.state.paws
+    let passId = this.state.id
+
     let box
     if (this.state.id === "no") {
       box = (<NewMemberForm />)
     } else {
       box = (<section className="user-profile-box">
-              <UserProfile />
-              <DogInfoBox />
+              <UserProfile id={passId} paws={passPaws}/>
+              <DogInfoBox id={passId} paws={passPaws}/>
             </section>)
     }
     return(box)
