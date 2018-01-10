@@ -62,7 +62,7 @@ class UserProfile extends Component {
   render() {
     return(
           <article className="user-profile">
-            <h2>Information About {this.state.username}</h2>
+            <h2>Information About {this.state.firstName}</h2>
               <div className="personal-info">
                 <p className="close">{this.state.firstName + " " + this.state.lastName}</p>
                 <p className="close">{this.state.street}</p>
@@ -70,20 +70,23 @@ class UserProfile extends Component {
                 <p>{this.state.email}</p>
                 <p>{this.state.phoneNumber}</p>
               </div>
-              <br></br>
               <h3>The information below is visible to other members</h3>
               <br></br>
               <div className="personal-info2">
                 <p className="close"><span id="bold">Major Cross Streets: </span>{this.state.crossStreet1 + " and " + this.state.crossStreet2}</p>
                 <p className="close"><span id="bold">Zip Code: </span>{this.state.zip}</p>
-                <p><span id="bold">Residence Type: </span>{this.state.residenceType}</p>
-                <p className="inline"><span id="bold">Fenced Yard: </span>{this.state.fencedYard}</p>
+                <br></br>
+                <p className="close"><span id="bold">Residence Type: </span>{this.state.residenceType}</p>
+                <p className="close"><span id="bold">Fenced Yard: </span>{this.state.fencedYard}</p>
                 <p className="close"><span id="bold">Cats: </span>{this.state.cats}</p>
                 <p className="close"><span id="bold">Children Under 2: </span>{this.state.childrenUnderTwo}</p>
-                <p className="inline"><span id="bold">Children Between 2-12: </span>{this.state.otherChildren}</p>
+                <p className="close"><span id="bold">Children Between 2-12: </span>{this.state.otherChildren}</p>
                 <br></br>
                 <p>{this.state.profile}</p>
               </div>
+              <br></br>
+              <br></br>
+                <button>Edit Profile</button>
             </article>
     )
   }

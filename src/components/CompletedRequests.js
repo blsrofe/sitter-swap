@@ -34,7 +34,7 @@ class CompletedRequests extends Component {
               <th style={{width:"100px"}}>Start Date</th>
               <th style={{width:"100px"}}>End Date</th>
               <th style={{width:"60px"}}>Nights</th>
-              <th style={{width:"400px"}}>Notes</th>
+              <th style={{width:"750px"}}>Notes</th>
             </tr>
           </thead>
           <tbody>

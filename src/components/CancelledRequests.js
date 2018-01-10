@@ -34,7 +34,7 @@ class CanceledRequests extends Component {
               <th style={{width:"100px"}}>Start Date</th>
               <th style={{width:"100px"}}>End Date</th>
               <th style={{width:"60px"}}>Nights</th>
-              <th style={{width:"170px"}}>Notes</th>
+              <th style={{width:"500px"}}>Notes</th>
             </tr>
           </thead>
           <tbody>

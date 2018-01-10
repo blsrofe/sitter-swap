@@ -54,10 +54,10 @@ class PublicProfile extends Component {
           <p className="close"><span id="bold">Major Cross Streets: </span>{this.state.crossStreet1 + " and " + this.state.crossStreet2}</p>
           <p className="close"><span id="bold">Zip Code: </span>{this.state.zip}</p>
           <p><span id="bold">Residence Type: </span>{this.state.residenceType}</p>
-          <p className="inline"><span id="bold">Fenced Yard: </span>{this.state.fencedYard}</p>
+          <p className="close"><span id="bold">Fenced Yard: </span>{this.state.fencedYard}</p>
           <p className="close"><span id="bold">Cats: </span>{this.state.cats}</p>
           <p className="close"><span id="bold">Children Under 2: </span>{this.state.childrenUnderTwo}</p>
-          <p className="inline"><span id="bold">Children Between 2-12: </span>{this.state.otherChildren}</p>
+          <p className="close"><span id="bold">Children Between 2-12: </span>{this.state.otherChildren}</p>
           <br></br>
           <p>{this.state.profile}</p>
         </div>

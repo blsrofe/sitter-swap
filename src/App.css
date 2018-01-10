@@ -41,19 +41,10 @@ nav ul li a {
 	padding: 1em;
 	color: #fff;
   font-size: 1.25em;
-  text-shadow: 3px 3px 8px #c2948a;
 }
 
 nav ul li a:hover {
-	color: #c2948a;
-}
-
-nav ul li h4 {
-	text-decoration: none;
-	padding: 1em;
-	color: #fff;
-  font-size: 1.25em;
-  text-shadow: 3px 3px 8px #c2948a;
+	color: #bdbcbc;
 }
 
 #paw {
@@ -95,7 +86,7 @@ nav ul li h4 {
   margin-left: 90px;
   margin-top: 50px;
   color: #c2948a;
-  text-shadow: 2px 2px 5px black;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .info-panel {
@@ -112,12 +103,12 @@ nav ul li h4 {
   margin: 25px;
   vertical-align: top;
   background-color: #7ea8be;
-  border-radius: 10px;
 }
 
 .info-box button {
   border-radius: 15px;
-  box-shadow: 5px 5px 12px black;
+  font-size: 14px;
+  border: black solid 1px;
 }
 
 .number {
@@ -143,7 +134,7 @@ nav ul li h4 {
 
 .rose {
   color: #c2948a;
-  text-shadow: 2px 2px 5px black;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 #main-pic {
@@ -160,19 +151,18 @@ nav ul li h4 {
   width: 550px;
   margin-left: 300px;
   margin-top: 10px;
-  background-color: #7ea8be;
-  border-radius: 10px;
+  background-color: #c5dbe6;
   padding: 10px;
-  color: white;
-  box-shadow: 10px 10px 12px #888888;
+  color: black;
+  border: black solid 1px;
 }
 
 .new-member-form button {
   background-color: #c2948a;
   border-radius: 10px;
-  color: white;
+  color: black;
   font-size: 15px;
-  box-shadow: 5px 5px 10px black;
+  border: black solid 1px;
 }
 
 .private-info {
@@ -185,23 +175,21 @@ nav ul li h4 {
   width: 475px;
   margin-left: 50px;
   margin-top: 25px;
-  background-color: #7ea8be;
-  border-radius: 10px;
+  background-color: #c5dbe6;
   padding: 10px;
-  color: white;
-  box-shadow: 10px 10px 12px #888888;
+  color: black;
+  border: solid black 1px;
 }
 
 .dog-info-box {
   height: 400px;
-  width: 545px;
-  margin-left: 610px;
+  width: 575px;
+  margin-left: 580px;
   margin-top: -618px;
-  background-color: #c2948a;
-  border-radius: 10px;
+  background-color: #e8e1d1;
   padding: 10px;
-  color: white;
-  box-shadow: 10px 10px 12px #888888;
+  color: black;
+  border: solid black 1px;
 }
 
 .dog-info-box th {
@@ -214,11 +202,20 @@ nav ul li h4 {
 
 .dog-info-box button {
   margin-top: 10px;
-  background-color: #7ea8be;
+  background-color: #3a606e;
   border-radius: 10px;
   color: white;
   font-size: 15px;
-  box-shadow: 5px 5px 10px black;
+  border: black solid 1px;
+}
+
+.user-profile button {
+  margin-top: 10px;
+  background-color: #3a606e;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  border: black solid 1px;
 }
 
 .close {
@@ -245,7 +242,6 @@ nav ul li h4 {
 #bold {
   font-weight: bold;
   font-style: italic;
-  color: #3a606e;
 }
 
 .new-dog-form {
@@ -253,11 +249,10 @@ nav ul li h4 {
   width: 450px;
   margin-left: 350px;
   margin-top: 50px;
-  background-color: #c2948a;
-  border-radius: 10px;
+  background-color: #c5dbe6;
   padding: 10px;
-  color: white;
-  box-shadow: 10px 10px 12px #888888;
+  color: black;
+  border: black solid 1px;
 }
 
 .new-dog-form input{
@@ -265,77 +260,48 @@ nav ul li h4 {
 }
 
 .new-dog-form button {
-  background-color: #7ea8be;
+  background-color: #c2948a;
   border-radius: 10px;
-  color: white;
+  color: black;
   font-size: 15px;
-  box-shadow: 5px 5px 10px black;
+  border: black solid 1px;
 }
 
 .user-profile-box h1 {
   margin-left: 770px;
   text-decoration: none;
-  /*this is not taking the underline away*/
-}
-
-.login-form {
-  height: 150px;
-  width: 310px;
-  margin-left: 350px;
-  margin-top: 50px;
-  background-color: #c2948a;
-  border-radius: 10px;
-  padding: 10px;
-  color: white;
-  box-shadow: 10px 10px 12px #888888;
-  padding-top: 50px;
-  padding-left: 50px;
-}
-
-.login-form input{
-  margin: 8px;
-}
-
-.login-form button {
-  background-color: #7ea8be;
-  border-radius: 10px;
-  color: white;
-  font-size: 15px;
-  box-shadow: 5px 5px 10px black;
 }
 
 .tripbox {
-  width: 800px;
+  width: 1125px;
   height: 300px;
   position: absolute;
-  top: 12px;
-  right: 30px;
-  background-color: #7ea8be;
-  border-radius: 10px;
+  top: 365px;
+  left: 23px;
+  background-color: #e8e1d1;
   padding: 10px;
-  color: white;
-  box-shadow: 10px 10px 12px #888888;
+  color: black;
+  border: solid black 1px;
 }
 
 .mailbox {
   width: 800px;
   height: 300px;
   position: absolute;
-  top: 350px;
+  top: 20px;
   right: 30px;
-  background-color: #c2948a;
-  border-radius: 10px;
+  background-color: #c5dbe6;
   padding: 10px;
-  color: white;
-  box-shadow: 10px 10px 12px #888888;
+  color: black;
+  border: black solid 1px;
 }
 
 .choicebox {
   height: 250px;
   width: 280px;
   position: absolute;
-  top: 12px;
-  left: 40px;
+  top: 80px;
+  left: 60px;
 }
 
 .choicebox a {
@@ -357,24 +323,23 @@ nav ul li h4 {
 }
 
 .new-trip {
-  height: 400px;
-  width: 425px;
+  height: 450px;
+  width: 400px;
   margin-left: 345px;
   margin-top: 20px;
-  background-color: #7ea8be;
-  border-radius: 10px;
+  background-color: #c5dbe6;
   padding: 15px;
-  padding-left: 60px;
-  color: white;
-  box-shadow: 10px 10px 12px #888888;
+  padding-left: 40px;
+  color: black;
+  border: black solid 1px;
 }
 
 .new-trip button {
   background-color: #c2948a;
   border-radius: 10px;
-  color: white;
+  color: black;
   font-size: 15px;
-  box-shadow: 5px 5px 10px black;
+  border: black 1px solid;
 }
 
 .new-trip input{
@@ -386,11 +351,10 @@ nav ul li h4 {
   width: 1085px;
   margin-left: 50px;
   margin-top: 30px;
-  background-color: #c2948a;
-  border-radius: 10px;
+  background-color: #e8e1d1;
   padding: 10px;
-  color: white;
-  box-shadow: 10px 10px 12px #888888;
+  color: black;
+  border: solid black 1px;
 }
 
 .format-table th {
@@ -410,15 +374,15 @@ nav ul li h4 {
 }
 
 .format-table tbody tr:hover {
-  color: #3a606e;
+  background-color: #c5dbe6;
 }
 
 .format-table button {
-  background-color: #7ea8be;
+  background-color: #3a606e;
   border-radius: 10px;
-  color: white;
+  color: black;
   font-size: 12px;
-  box-shadow: 5px 5px 10px black;
+  border: solid black 1px;
 }
 
 .format-table td {
@@ -434,28 +398,37 @@ nav ul li h4 {
    border-radius: 10px;
    color: white;
    font-size: 12px;
-   box-shadow: 5px 5px 10px black;
+   border: solid black 1px;
  }
 
  ul.tripbox-header li {
    display: inline;
    list-style-type: none;
    margin: 0;
-   padding: 12px;
+   padding-left: 17px;
+   padding-right: 8px;
+   padding-bottom: 4px;
+   padding-top: 10px;
+   line-height: 0px;
    margin-bottom: 20px;
+   line-height: 0px;
+   border: solid black 1px;
  }
 
  ul.tripbox-header {
-  background-color: #3a606e;
+  background-color: #bdbcbc;
   padding: 0;
-  border-radius: 6px;
   margin-top: -2px;
-  height: 50px;
-  width: 515px;
+  height: 33px;
+  width: 530px;
 }
 
-ul.tripbox-header li h3:hover{
-  color: #c2948a;
+ul.tripbox-header li:hover{
+  background-color: #c5dbe6;
+}
+
+ul.tripbox-header li:active{
+  color: blue;
 }
 
 ul.tripbox-header li h3{
@@ -467,23 +440,21 @@ ul.tripbox-header li h3{
   width: 475px;
   margin-left: 50px;
   margin-top: 25px;
-  background-color: #7ea8be;
-  border-radius: 10px;
+  background-color: #c5dbe6;
   padding: 10px;
-  color: white;
-  box-shadow: 10px 10px 12px #888888;
+  color: black;
+  border: 1px solid black;
 }
 
 .public-dog-info-box {
   height: 400px;
-  width: 545px;
-  margin-left: 600px;
-  margin-top: -415px;
-  background-color: #c2948a;
-  border-radius: 10px;
+  width: 575px;
+  margin-left: 580px;
+  margin-top: -422px;
+  background-color: #e8e1d1;
   padding: 10px;
-  color: white;
-  box-shadow: 10px 10px 12px #888888;
+  color: black;
+  border: solid black 1px;
 }
 
 .public-dog-info-box th {
@@ -495,14 +466,6 @@ ul.tripbox-header li h3{
   padding: 5px;
 }
 
-.public-dog-info-box button {
-  margin-top: 10px;
-  background-color: #7ea8be;
-  border-radius: 10px;
-  color: white;
-  font-size: 15px;
-  box-shadow: 5px 5px 10px black;
-}
 
 .public-profile-dashboard a {
   color: #3a606e;
@@ -534,20 +497,19 @@ ul.tripbox-header li h3{
   width: 500px;
   margin-left: 330px;
   margin-top: 50px;
-  background-color: #7ea8be;
-  border-radius: 10px;
+  background-color: #c5dbe6;
   padding: 15px;
   padding-left: 15px;
-  color: white;
-  box-shadow: 10px 10px 12px #888888;
+  color: black;
+  border: black solid 1px;
 }
 
 .apply-form button {
   background-color: #c2948a;
   border-radius: 10px;
-  color: white;
+  color: black;
   font-size: 15px;
-  box-shadow: 5px 5px 10px black;
+  border: black solid 1px;
 }
 
 .responses {
@@ -577,30 +539,40 @@ ul.tripbox-header li h3{
   border-radius: 10px;
   color: white;
   font-size: 12px;
-  box-shadow: 5px 5px 10px black;
 }
 
 ul.mailbox-header li {
   display: inline;
   list-style-type: none;
-  margin: 0;
-  padding: 12px;
-  margin-bottom: 20px;
+  padding-left: 17px;
+  padding-right: 9px;
+  padding-bottom: 5px;
+  padding-top: 10px;
+  line-height: 0px;
+  border: black solid 1px;
 }
 
 ul.mailbox-header {
- background-color: #3a606e;
- padding: 0;
- border-radius: 6px;
- margin-top: -2px;
- height: 50px;
- width: 190px;
+ background-color: #bdbcbc;
+ padding: 0px;
+ margin-top: 0px;
+ margin-left: 0px;
+ height: 34px;
+ width: 189px;
 }
 
-ul.mailbox-header li h3:hover{
- color: #c2948a;
+ul.mailbox-header li:hover{
+  background-color: #e8e1d1;
+}
+
+ul.mailbox-header li:active{
+  color: blue;
 }
 
 ul.mailbox-header li h3{
  display: inline-block;
+}
+
+.mailbox tbody tr:hover {
+  background-color: #e8e1d1;
 }

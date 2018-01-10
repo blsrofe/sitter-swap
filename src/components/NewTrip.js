@@ -56,6 +56,7 @@ class NewTrip extends Component {
         isAuthenticated() &&
 
         <article className="new-trip">
+          <h2>Tell Others About Your Trip</h2>
           <form onSubmit={this.handleSubmit}>
             <label htmlFor="tripName">Trip Name: </label>
               <input name="tripName" type="text" onChange={this.handleChange} required/>

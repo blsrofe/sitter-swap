@@ -78,10 +78,10 @@ class DogInfoBox extends Component {
                     <th style={{width:"80px"}}>Name</th>
                     <th style={{width:"40px"}}>Age</th>
                     <th style={{width:"100px"}}>Breed</th>
-                    <th style={{width:"40px"}}>Sex</th>
-                    <th style={{width:"130px"}}>Notes</th>
-                    <th style={{width:"60px"}}></th>
-                    <th style={{width:"60px"}}></th>
+                    <th style={{width:"50px"}}>Sex</th>
+                    <th style={{width:"170px"}}>Notes</th>
+                    <th style={{width:"20px"}}></th>
+                    <th style={{width:"20px"}}></th>
                   </tr>
                 </thead>
                 <tbody>

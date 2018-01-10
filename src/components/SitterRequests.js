@@ -39,8 +39,8 @@ class SitterRequests extends Component {
                 <th style={{width:"110px"}}>Requester</th>
                 <th style={{width:"110px"}}>Start Date</th>
                 <th style={{width:"110px"}}>End Date</th>
-                <th style={{width:"60px"}}>Nights</th>
-                <th style={{width:"60px"}}>Zip Code</th>
+                <th style={{width:"80px"}}>Nights</th>
+                <th style={{width:"100px"}}>Zip Code</th>
                 <th style={{width:"350px"}}>Notes</th>
                 <th style={{width:"60px"}}></th>
                 <th style={{width:"60px"}}></th>
