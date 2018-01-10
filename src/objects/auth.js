@@ -49,6 +49,7 @@ export default class Auth {
     localStorage.removeItem('user_id')
     localStorage.removeItem('owner_id')
     localStorage.removeItem('expires_at');
+    localStorage.removeItem('paws')
     // navigate to the home route
     history.replace('/home');
   }

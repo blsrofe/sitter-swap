@@ -19,7 +19,7 @@ class PublicDogInfoBox extends Component {
 
   componentDidMount() {
     const API = 'https://sitter-swap-api.herokuapp.com/api/v1/users/'
-    let id = localStorage.getItem("user_id")
+    let id = this.props.id
     const dogs = '/dogs'
     fetch(API + id + dogs)
       .then(handleErrors)

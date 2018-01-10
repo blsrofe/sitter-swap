@@ -14,8 +14,8 @@ class UsersShow extends Component {
         {
         isAuthenticated() &&
         <section className="public-profile-dashboard">
-          <PublicProfile />
-          <PublicDogInfoBox />
+          <PublicProfile id={this.props.match.params.id}/>
+          <PublicDogInfoBox id={this.props.match.params.id}/>
           <h3><NavLink to="/requests">Back to Requests</NavLink></h3>
         </section>
         }

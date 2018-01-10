@@ -22,7 +22,7 @@ class PublicProfile extends Component {
 
   componentDidMount() {
     const API = 'https://sitter-swap-api.herokuapp.com/api/v1/users-public/'
-    let id = localStorage.getItem("user_id")
+    let id = this.props.id
     fetch(API + id)
       .then(handleErrors)
       .then(response => response.json())
